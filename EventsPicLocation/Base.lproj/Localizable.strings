@@ -13,3 +13,5 @@
 "EMPTY_PASSWORD" = "Preencha o campo password";
 "WRONG_LOGIN_PASSWORD" = "Login ou senha incorretos";
 "KEPP_LOGGED" = "Manter conectado";
+"PHOTO_UPP" = "FOTO";
+"VIDEO_UPP" = "VÍDEO";

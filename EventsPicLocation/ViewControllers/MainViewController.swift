@@ -22,6 +22,10 @@ class MainViewController: KYDrawerController {
         
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }

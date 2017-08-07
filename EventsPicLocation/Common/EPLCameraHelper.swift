@@ -22,6 +22,10 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var previewView:UIView?
     weak var cameraDelegate:EPLCameraHelperDelegate?
+
+    enum CameraMode {
+        case Photo, Video
+    }
     
     convenience init(cameraDelegate:EPLCameraHelperDelegate, previewView:UIView) {
         self.init()
