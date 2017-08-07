@@ -26,6 +26,7 @@
 		A8C0592B1F212D16003781D7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C059291F212D16003781D7 /* MenuViewController.swift */; };
 		A8C0592C1F212D16003781D7 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C0592A1F212D16003781D7 /* MenuViewController.xib */; };
 		AC4788C2A487A88B4646CDDD /* Pods_EventsPicLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */; };
+		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		A8C059291F212D16003781D7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ViewControllers/MenuViewController.swift; sourceTree = "<group>"; };
 		A8C0592A1F212D16003781D7 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
 		DA85193ABA5D7FB28942AC56 /* Pods-EventsPicLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.release.xcconfig"; sourceTree = "<group>"; };
+		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		A88F3E401F1BF13100AE6ACC = {
 			isa = PBXGroup;
 			children = (
+				E25566AB1F38DCC900D41755 /* .gitignore */,
 				A88F3E4B1F1BF13100AE6ACC /* EventsPicLocation */,
 				A88F3E4A1F1BF13100AE6ACC /* Products */,
 				5DD1D2932A15FF30AA690572 /* Pods */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25566AC1F38DCC900D41755 /* .gitignore in Resources */,
 				A8C0592C1F212D16003781D7 /* MenuViewController.xib in Resources */,
 				A88F3E541F1BF13100AE6ACC /* Assets.xcassets in Resources */,
 				A8C059271F212757003781D7 /* MainViewController.xib in Resources */,
