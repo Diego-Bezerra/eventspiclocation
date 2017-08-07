@@ -1,0 +1,6 @@
+framework module Pods_EventsPicLocation {
+  umbrella header "Pods-EventsPicLocation-umbrella.h"
+
+  export *
+  module * { export * }
+}

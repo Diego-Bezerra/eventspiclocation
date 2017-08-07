@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  EventsPicLocation
+
+  Created by Diego Bezerra Souza on 16/07/17.
+  Copyright © 2017 Pernambuco da Sorte. All rights reserved.
+*/
+
+"LOGIN" = "Login";
+"PASSWORD" = "Senha";
+"ENTER" = "Entrar";
+"EMPTY_LOGIN" = "Preencha o campo login";
+"EMPTY_PASSWORD" = "Preencha o campo password";
+"WRONG_LOGIN_PASSWORD" = "Login ou senha incorretos";
+"KEPP_LOGGED" = "Manter conectado";

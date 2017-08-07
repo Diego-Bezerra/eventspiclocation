@@ -1,0 +1,18 @@
+PODS:
+  - IQKeyboardManager (4.0.10)
+  - KYDrawerController (2.0.1)
+  - MBProgressHUD (1.0.0)
+
+DEPENDENCIES:
+  - IQKeyboardManager (= 4.0.10)
+  - KYDrawerController
+  - MBProgressHUD (= 1.0.0)
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+  KYDrawerController: b716cfa5730dc2133a67efcfc28b3b5a2cff6101
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+
+PODFILE CHECKSUM: 1a0e03579f0585413761a007b9039af60720e3e2
+
+COCOAPODS: 1.2.1
