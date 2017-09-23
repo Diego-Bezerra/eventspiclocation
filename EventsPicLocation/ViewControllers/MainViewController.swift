@@ -14,7 +14,6 @@ class MainViewController: KYDrawerController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDrawer()
-        
     }
 
     override func didReceiveMemoryWarning() {

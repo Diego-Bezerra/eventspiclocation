@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtLogin: EPLTextField!
     @IBOutlet weak var txtPassword: EPLTextField!
@@ -62,8 +62,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func openCameraViewController() {
-        let cameraViewController = CameraViewController()
-        self.present(cameraViewController, animated: true, completion: nil)
+        if let mainView = (UIApplication.shared.delegate as? AppDelegate)?.mainView {
+            self.present(mainView, animated: true, completion: nil)
+        }
     }
     
     func enterApp() {

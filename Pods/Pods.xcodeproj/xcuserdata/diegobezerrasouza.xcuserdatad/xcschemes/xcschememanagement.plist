@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DownPicker-DownPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DownPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ObjectiveRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectiveSugar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-EventsPicLocation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,11 +47,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>091EC53E529B6BA503C1A010D17A251E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>279AA6726F52A334C45E85774BD21A3D</key>
 		<dict>
 			<key>primary</key>
@@ -43,6 +58,31 @@
 			<true/>
 		</dict>
 		<key>7AF8670FDECF80EFCAA3D04318C4B4D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BECC4A4ED6CA0D30E1421590DBDEBB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>808C99B70FE41FB56B15FB934EBADB2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D462ACD571CA424CE11DE0978FF87D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF2DFE46B565BE8D7133BA862F3BEEDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7A939060109305910E0967FCD5612FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

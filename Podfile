@@ -9,5 +9,7 @@ target 'EventsPicLocation' do
   pod 'IQKeyboardManager', '4.0.10'
   pod 'MBProgressHUD', '1.0.0'
   pod 'KYDrawerController'
+  pod 'DownPicker', '0.1.34'
+  pod 'ObjectiveRecord', '1.5.0'
 
 end

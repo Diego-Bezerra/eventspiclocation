@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8482B991F770449001D8107 /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B981F770449001D8107 /* MediaRepository.swift */; };
+		A8482B9B1F7705F7001D8107 /* LotteryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9A1F7705F7001D8107 /* LotteryRepository.swift */; };
+		A8482B9D1F770668001D8107 /* EditionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9C1F770668001D8107 /* EditionRepository.swift */; };
+		A8482BA01F77070B001D8107 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9E1F77070B001D8107 /* User+CoreDataClass.swift */; };
+		A8482BA11F77070B001D8107 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9F1F77070B001D8107 /* User+CoreDataProperties.swift */; };
 		A88F3E4D1F1BF13100AE6ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F3E4C1F1BF13100AE6ACC /* AppDelegate.swift */; };
 		A88F3E541F1BF13100AE6ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88F3E531F1BF13100AE6ACC /* Assets.xcassets */; };
 		A88F3E611F1BF19000AE6ACC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F3E5F1F1BF19000AE6ACC /* LoginViewController.swift */; };
@@ -19,12 +24,22 @@
 		A88F3E761F1BFC4F00AE6ACC /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88F3E741F1BFC4F00AE6ACC /* CameraViewController.xib */; };
 		A88F3E7A1F1C023200AE6ACC /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88F3E791F1C023200AE6ACC /* Launch.xib */; };
 		A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F3E7B1F1C036B00AE6ACC /* EPLButton.swift */; };
+		A8AE6CD01F76F58300D86431 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */; };
+		A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */; };
+		A8AE6CD51F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */; };
+		A8AE6CE91F77008700D86431 /* Edition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE31F77008700D86431 /* Edition+CoreDataClass.swift */; };
+		A8AE6CEA1F77008700D86431 /* Edition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE41F77008700D86431 /* Edition+CoreDataProperties.swift */; };
+		A8AE6CEB1F77008700D86431 /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE51F77008700D86431 /* Media+CoreDataClass.swift */; };
+		A8AE6CEC1F77008700D86431 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE61F77008700D86431 /* Media+CoreDataProperties.swift */; };
+		A8AE6CED1F77008700D86431 /* Lottery+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE71F77008700D86431 /* Lottery+CoreDataClass.swift */; };
+		A8AE6CEE1F77008700D86431 /* Lottery+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE81F77008700D86431 /* Lottery+CoreDataProperties.swift */; };
 		A8C0591C1F1CD42A003781D7 /* EPLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */; };
 		A8C059201F1E2310003781D7 /* EPLCameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C0591F1F1E230F003781D7 /* EPLCameraHelper.swift */; };
 		A8C059261F212757003781D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C059241F212757003781D7 /* MainViewController.swift */; };
 		A8C059271F212757003781D7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C059251F212757003781D7 /* MainViewController.xib */; };
 		A8C0592B1F212D16003781D7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C059291F212D16003781D7 /* MenuViewController.swift */; };
 		A8C0592C1F212D16003781D7 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C0592A1F212D16003781D7 /* MenuViewController.xib */; };
+		A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */; };
 		AC4788C2A487A88B4646CDDD /* Pods_EventsPicLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */; };
 		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -32,6 +47,11 @@
 /* Begin PBXFileReference section */
 		08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsPicLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		758510C4447AE44D570D1422 /* Pods-EventsPicLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		A8482B981F770449001D8107 /* MediaRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MediaRepository.swift; path = Model/MediaRepository.swift; sourceTree = "<group>"; };
+		A8482B9A1F7705F7001D8107 /* LotteryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryRepository.swift; path = Model/LotteryRepository.swift; sourceTree = "<group>"; };
+		A8482B9C1F770668001D8107 /* EditionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditionRepository.swift; path = Model/EditionRepository.swift; sourceTree = "<group>"; };
+		A8482B9E1F77070B001D8107 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "Model/User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8482B9F1F77070B001D8107 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "Model/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88F3E491F1BF13100AE6ACC /* EventsPicLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsPicLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88F3E4C1F1BF13100AE6ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A88F3E531F1BF13100AE6ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +66,15 @@
 		A88F3E741F1BFC4F00AE6ACC /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = ViewControllers/CameraViewController.xib; sourceTree = "<group>"; };
 		A88F3E791F1C023200AE6ACC /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		A88F3E7B1F1C036B00AE6ACC /* EPLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLButton.swift; path = Common/EPLButton.swift; sourceTree = "<group>"; };
+		A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MediaViewController.swift; path = ViewControllers/MediaViewController.swift; sourceTree = "<group>"; };
+		A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MediaViewController.xib; path = ViewControllers/MediaViewController.xib; sourceTree = "<group>"; };
+		A8AE6CD41F76FD0200D86431 /* EventsPicLocationModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsPicLocationModel.xcdatamodel; sourceTree = "<group>"; };
+		A8AE6CE31F77008700D86431 /* Edition+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Edition+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8AE6CE41F77008700D86431 /* Edition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Edition+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8AE6CE51F77008700D86431 /* Media+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8AE6CE61F77008700D86431 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8AE6CE71F77008700D86431 /* Lottery+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lottery+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8AE6CE81F77008700D86431 /* Lottery+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lottery+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8B13BF01F1C454200326AF4 /* EventsPicLocation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventsPicLocation-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLLabel.swift; path = Common/EPLLabel.swift; sourceTree = "<group>"; };
 		A8C0591F1F1E230F003781D7 /* EPLCameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLCameraHelper.swift; path = Common/EPLCameraHelper.swift; sourceTree = "<group>"; };
@@ -53,6 +82,7 @@
 		A8C059251F212757003781D7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ViewControllers/MainViewController.xib; sourceTree = "<group>"; };
 		A8C059291F212D16003781D7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ViewControllers/MenuViewController.swift; sourceTree = "<group>"; };
 		A8C0592A1F212D16003781D7 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
+		A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLBaseViewController.swift; path = Common/EPLBaseViewController.swift; sourceTree = "<group>"; };
 		DA85193ABA5D7FB28942AC56 /* Pods-EventsPicLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.release.xcconfig"; sourceTree = "<group>"; };
 		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +116,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A8482BA21F770712001D8107 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A8482B9E1F77070B001D8107 /* User+CoreDataClass.swift */,
+				A8482B9F1F77070B001D8107 /* User+CoreDataProperties.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		A88F3E401F1BF13100AE6ACC = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +147,8 @@
 		A88F3E4B1F1BF13100AE6ACC /* EventsPicLocation */ = {
 			isa = PBXGroup;
 			children = (
+				A8AE6CD61F76FE8200D86431 /* Model */,
+				A8AE6CD21F76FB2300D86431 /* Data */,
 				A88F3E631F1BF1A500AE6ACC /* Common */,
 				A88F3E5E1F1BF17400AE6ACC /* ViewControllers */,
 				A88F3E4C1F1BF13100AE6ACC /* AppDelegate.swift */,
@@ -116,6 +157,7 @@
 				A88F3E711F1BF57400AE6ACC /* Localizable.strings */,
 				A88F3E791F1C023200AE6ACC /* Launch.xib */,
 				A8B13BF01F1C454200326AF4 /* EventsPicLocation-Bridging-Header.h */,
+				A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */,
 			);
 			path = EventsPicLocation;
 			sourceTree = "<group>";
@@ -123,6 +165,7 @@
 		A88F3E5E1F1BF17400AE6ACC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8AE6CCD1F76F53100D86431 /* MediaViewController */,
 				A8C059281F212D00003781D7 /* MenuViewController */,
 				A8C059231F21273B003781D7 /* MainViewController */,
 				A8C0591D1F1CDB0F003781D7 /* LoginViewController */,
@@ -138,6 +181,63 @@
 				A8C059211F1E2371003781D7 /* Helpers */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		A8AE6CCD1F76F53100D86431 /* MediaViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */,
+				A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */,
+			);
+			name = MediaViewController;
+			sourceTree = "<group>";
+		};
+		A8AE6CD21F76FB2300D86431 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		A8AE6CD61F76FE8200D86431 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8482BA21F770712001D8107 /* User */,
+				A8AE6D301F7703A200D86431 /* Media */,
+				A8AE6D2F1F77039000D86431 /* Lottery */,
+				A8AE6D2E1F77037400D86431 /* Edition */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A8AE6D2E1F77037400D86431 /* Edition */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE6CE31F77008700D86431 /* Edition+CoreDataClass.swift */,
+				A8AE6CE41F77008700D86431 /* Edition+CoreDataProperties.swift */,
+				A8482B9C1F770668001D8107 /* EditionRepository.swift */,
+			);
+			name = Edition;
+			sourceTree = "<group>";
+		};
+		A8AE6D2F1F77039000D86431 /* Lottery */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE6CE71F77008700D86431 /* Lottery+CoreDataClass.swift */,
+				A8AE6CE81F77008700D86431 /* Lottery+CoreDataProperties.swift */,
+				A8482B9A1F7705F7001D8107 /* LotteryRepository.swift */,
+			);
+			name = Lottery;
+			sourceTree = "<group>";
+		};
+		A8AE6D301F7703A200D86431 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE6CE51F77008700D86431 /* Media+CoreDataClass.swift */,
+				A8AE6CE61F77008700D86431 /* Media+CoreDataProperties.swift */,
+				A8482B981F770449001D8107 /* MediaRepository.swift */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 		A8C0591D1F1CDB0F003781D7 /* LoginViewController */ = {
@@ -174,6 +274,7 @@
 				A88F3E661F1BF33000AE6ACC /* EPLTextField.swift */,
 				A88F3E7B1F1C036B00AE6ACC /* EPLButton.swift */,
 				A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */,
+				A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -265,6 +366,7 @@
 				A8C059271F212757003781D7 /* MainViewController.xib in Resources */,
 				A88F3E761F1BFC4F00AE6ACC /* CameraViewController.xib in Resources */,
 				A88F3E6F1F1BF57400AE6ACC /* Localizable.strings in Resources */,
+				A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */,
 				A88F3E621F1BF19000AE6ACC /* LoginViewController.xib in Resources */,
 				A88F3E7A1F1C023200AE6ACC /* Launch.xib in Resources */,
 			);
@@ -325,14 +427,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8AE6CD51F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld in Sources */,
 				A88F3E651F1BF1EC00AE6ACC /* EPLUserPreferencesHelper.swift in Sources */,
 				A88F3E611F1BF19000AE6ACC /* LoginViewController.swift in Sources */,
+				A8AE6CE91F77008700D86431 /* Edition+CoreDataClass.swift in Sources */,
+				A8AE6CEA1F77008700D86431 /* Edition+CoreDataProperties.swift in Sources */,
+				A8482B9B1F7705F7001D8107 /* LotteryRepository.swift in Sources */,
 				A8C0591C1F1CD42A003781D7 /* EPLLabel.swift in Sources */,
 				A8C059201F1E2310003781D7 /* EPLCameraHelper.swift in Sources */,
+				A8482BA11F77070B001D8107 /* User+CoreDataProperties.swift in Sources */,
 				A88F3E691F1BF3D100AE6ACC /* EPLHelper.swift in Sources */,
+				A8AE6CEC1F77008700D86431 /* Media+CoreDataProperties.swift in Sources */,
+				A8AE6CED1F77008700D86431 /* Lottery+CoreDataClass.swift in Sources */,
+				A8482B9D1F770668001D8107 /* EditionRepository.swift in Sources */,
+				A8AE6CD01F76F58300D86431 /* MediaViewController.swift in Sources */,
+				A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */,
+				A8482BA01F77070B001D8107 /* User+CoreDataClass.swift in Sources */,
 				A8C0592B1F212D16003781D7 /* MenuViewController.swift in Sources */,
 				A88F3E4D1F1BF13100AE6ACC /* AppDelegate.swift in Sources */,
+				A8AE6CEE1F77008700D86431 /* Lottery+CoreDataProperties.swift in Sources */,
 				A88F3E671F1BF33000AE6ACC /* EPLTextField.swift in Sources */,
+				A8482B991F770449001D8107 /* MediaRepository.swift in Sources */,
+				A8AE6CEB1F77008700D86431 /* Media+CoreDataClass.swift in Sources */,
 				A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */,
 				A88F3E751F1BFC4F00AE6ACC /* CameraViewController.swift in Sources */,
 				A8C059261F212757003781D7 /* MainViewController.swift in Sources */,
@@ -505,6 +621,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A8AE6CD41F76FD0200D86431 /* EventsPicLocationModel.xcdatamodel */,
+			);
+			currentVersion = A8AE6CD41F76FD0200D86431 /* EventsPicLocationModel.xcdatamodel */;
+			path = EventsPicLocationModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A88F3E411F1BF13100AE6ACC /* Project object */;
 }

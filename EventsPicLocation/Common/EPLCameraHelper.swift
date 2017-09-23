@@ -15,12 +15,13 @@ protocol EPLCameraHelperDelegate: class {
     func onPictureSampleBufferCreated(picSampleBuffer: CMSampleBuffer?)
 }
 
-class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
+class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate, AVCaptureFileOutputRecordingDelegate {
     
     var session: AVCaptureSession!
-    var cameraOutput: Any?
+    var cameraPhotoOutput: Any?
+    var cameraMovieOutput: AVCaptureMovieFileOutput?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    var previewView:UIView?
+    var previewView:UIView?    
     weak var cameraDelegate:EPLCameraHelperDelegate?
 
     enum CameraMode {
@@ -40,11 +41,8 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
         session.sessionPreset = AVCaptureSessionPresetMedium
         
         do {
-            guard let backCamera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else {
-                throw EPLCameraHelperError.noBackCamera
-            }
-            try createInput(forDevice: backCamera, withSession: self.session)
-            try createOutput(withSession: self.session)
+            try createInput(devicePosition: AVCaptureDevicePosition.back)
+            try createOutput(outputType: OutputType.Photo)
         } catch {
             print(error.localizedDescription)
         }
@@ -52,8 +50,49 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
         
     }
     
+    func getCameraDeviceByPosition(devicePosition:AVCaptureDevicePosition) -> AVCaptureDevice? {
+        for device:AVCaptureDevice in AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as! Array<AVCaptureDevice> {
+            if device.position == devicePosition {
+                return device
+            }
+        }
+        
+        return nil
+    }
+    
+    func toggleCamera() {
+        if self.session.inputs.count > 0 {
+            self.session.beginConfiguration()
+            let input = session.inputs[0] as! AVCaptureDeviceInput
+            let newDevicePosition = input.device.position == AVCaptureDevicePosition.back ? AVCaptureDevicePosition.front : AVCaptureDevicePosition.back
+            do {
+                try createInput(devicePosition: newDevicePosition)
+            } catch {
+                print(error.localizedDescription)
+            }
+            self.session.commitConfiguration()
+        }
+    }
+    
+    private func createInput(devicePosition:AVCaptureDevicePosition) throws {
+        do {
+            guard let camera = getCameraDeviceByPosition(devicePosition:devicePosition) else {
+                throw EPLCameraHelperError.noCamera
+            }
+            try createInput(forDevice: camera, withSession: self.session)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     private func createInput(forDevice device:AVCaptureDevice, withSession session:AVCaptureSession) throws {
         do {
+            
+            if self.session.inputs.count > 0 {
+                session.removeInput(self.session.inputs[0] as! AVCaptureInput)
+            }
+            
             let cameraInput = try AVCaptureDeviceInput(device: device)
             if session.canAddInput(cameraInput) {
                 session.addInput(cameraInput)
@@ -65,7 +104,44 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
         }
     }
     
-    private func createOutput(withSession session:AVCaptureSession) throws {
+    enum OutputType:Int {
+        case Photo, Video
+    }
+    
+    func createOutput(outputType:OutputType) throws {
+        
+        if self.session.outputs.count > 0 {
+            self.session.removeOutput(self.session.outputs[0] as! AVCaptureOutput)
+        }
+        
+        switch outputType {
+        case .Photo:
+            do {
+                try createPhotoOutput(withSession: self.session)
+            } catch {
+                throw EPLCameraHelperError.noOutput
+            }
+            break
+        case .Video:
+            do {
+                try createVideoOutput()
+            } catch {
+                throw EPLCameraHelperError.noOutput
+            }
+            break
+        }
+    }
+    
+    private func createVideoOutput() throws {
+        self.cameraMovieOutput = AVCaptureMovieFileOutput()
+        if self.session.canAddOutput(self.cameraMovieOutput) {
+            self.session.addOutput(self.cameraMovieOutput)
+        }  else {
+            throw EPLCameraHelperError.noOutput
+        }
+    }
+    
+    private func createPhotoOutput(withSession session:AVCaptureSession) throws {
         do {
             if #available(iOS 10, *) {
                 try createOutputLatestVersion(withSession: session)
@@ -78,8 +154,8 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
     }
     
     private func createOutputPreviousVersion(withSession session:AVCaptureSession) throws {
-        self.cameraOutput = AVCaptureStillImageOutput()
-        if let camOut = self.cameraOutput as? AVCaptureStillImageOutput {
+        self.cameraPhotoOutput = AVCaptureStillImageOutput()
+        if let camOut = self.cameraPhotoOutput as? AVCaptureStillImageOutput {
             camOut.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
             
             if session.canAddOutput(camOut) {
@@ -94,8 +170,8 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
     @available(iOS 10, *)
     private func createOutputLatestVersion(withSession session:AVCaptureSession) throws {
         
-        self.cameraOutput = AVCapturePhotoOutput()
-        if let camOut = self.cameraOutput as? AVCapturePhotoOutput {
+        self.cameraPhotoOutput = AVCapturePhotoOutput()
+        if let camOut = self.cameraPhotoOutput as? AVCapturePhotoOutput {
             if session.canAddOutput(camOut) {
                 session.addOutput(camOut)
                 createVideoPreviewLayer()
@@ -106,12 +182,24 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
     }
     
     func takePicture() {
-        if let camOut = self.cameraOutput {
+        if let camOut = self.cameraPhotoOutput {
             if #available(iOS 10, *) {
                 capturePhotoLatestVersion(output: camOut as! AVCapturePhotoOutput)
             } else {
                 capturePhotoPreviousVersion(output: camOut as! AVCaptureStillImageOutput)
             }
+        }
+    }
+    
+    func startRecordingVideo(fileUrl:URL) {
+        if self.cameraMovieOutput != nil {
+            self.cameraMovieOutput?.startRecording(toOutputFileURL: fileUrl, recordingDelegate: self)
+        }
+    }
+    
+    func stopRecordingVideo() {
+        if self.cameraMovieOutput != nil {
+            self.cameraMovieOutput?.stopRecording()
         }
     }
     
@@ -174,7 +262,7 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
         case noVideoPreviewLayer
         case noInput
         case noOutput
-        case noBackCamera
+        case noCamera
         
         public var errorDescription: String? {
             switch self {
@@ -192,8 +280,8 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
                 return "input cannot be created"
             case .noOutput:
                 return "output cannot be created"
-            case .noBackCamera:
-                return "no back camera available"
+            case .noCamera:
+                return "no camera camera available"
             }
         }
     }
@@ -236,5 +324,14 @@ class EPLCameraHelper: NSObject, AVCapturePhotoCaptureDelegate {
         let scaledImage = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
         let image = UIImage(cgImage: cgImageRef)
         return (scaledImage, image)
+    }
+    
+    //MARK: - AVCaptureFileOutputRecordingDelegate
+    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
+        
+    }
+    
+    func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+        
     }
 }

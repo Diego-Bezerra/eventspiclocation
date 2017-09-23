@@ -45,4 +45,11 @@ class EPLHelper {
     static func hideProgress(withView view:UIView) {
         MBProgressHUD.hide(for: view, animated: true)
     }
+    
+    static func setViewShadow(view:UIView) {
+        view.layer.masksToBounds = false
+        view.layer.shadowOffset = CGSize(width: -15, height: 20)
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.5
+    }
 }
