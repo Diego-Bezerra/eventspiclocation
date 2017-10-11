@@ -8,6 +8,7 @@
 
 import UIKit
 import KYDrawerController
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        self.mainView = MainViewController(drawerDirection: KYDrawerController.DrawerDirection.left, drawerWidth: 300)
+        setupGoogleMaps()
+        
+        self.mainView = MainViewController()
         let firstViewController = EPLUserPreferencesHelper.isUserLogged() ?
             self.mainView! : LoginViewController()
                 
@@ -29,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func setDrawerState(drawerState:KYDrawerController.DrawerState) {
-        mainView?.setDrawerState(drawerState, animated: true)
+    func setupGoogleMaps() {
+        GMSServices.provideAPIKey("AIzaSyA3XGedY_lYZ-39EBa0fl_5N32sr3a7nzU")
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

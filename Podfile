@@ -11,5 +11,9 @@ target 'EventsPicLocation' do
   pod 'KYDrawerController'
   pod 'DownPicker', '0.1.34'
   pod 'ObjectiveRecord', '1.5.0'
-
+  pod 'GoogleMaps', '2.4.0'
+  pod 'Alamofire', '4.5.1'
+  pod 'SwiftyJSON', '3.1.4'
+  pod 'ObjectMapper', '3.0.0'
+  
 end

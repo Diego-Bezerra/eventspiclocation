@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MediaViewController" customModule="EventsPicLocation" customModuleProvider="target">
             <connections>
+                <outlet property="captureMediaButton" destination="7b2-cG-Edf" id="FGN-Pn-Fda"/>
                 <outlet property="edition" destination="XTI-R7-98Y" id="fMy-RG-Jei"/>
                 <outlet property="event" destination="pou-bq-AvK" id="Iax-TY-ehk"/>
-                <outlet property="mediaContainer" destination="4dB-j3-ZRq" id="M5e-vv-RaM"/>
+                <outlet property="mediaLibraryButton" destination="Gdq-3x-lVt" id="YjL-Rt-71O"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CHOOSE_EDITION" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTI-R7-98Y" customClass="EPLTextField" customModule="EventsPicLocation" customModuleProvider="target">
-                    <rect key="frame" x="10" y="20" width="301" height="30"/>
+                    <rect key="frame" x="16" y="20" width="288" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="XO6-NE-fza"/>
                     </constraints>
@@ -31,8 +32,72 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-cG-Edf">
+                    <rect key="frame" x="16" y="96" width="288" height="48"/>
+                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="EPW-Zb-gTe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Capturar Mídia" image="photo">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorIB">
+                            <color key="value" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.80000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="5" height="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="captureMediasAction:" destination="-1" eventType="touchUpInside" id="Nn1-pj-6Bj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdq-3x-lVt">
+                    <rect key="frame" x="16" y="152" width="288" height="48"/>
+                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="NgJ-VP-Zaa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Fotos e Vídeos" image="picture">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorIB">
+                            <color key="value" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.80000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="5" height="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openPhotosVideosLibraryAction:" destination="-1" eventType="touchUpInside" id="TT7-QA-wlQ"/>
+                    </connections>
+                </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CHOOSE_EVENT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pou-bq-AvK">
-                    <rect key="frame" x="10" y="58" width="301" height="30"/>
+                    <rect key="frame" x="16" y="58" width="288" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="hM0-a9-I3y"/>
                     </constraints>
@@ -40,37 +105,27 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dB-j3-ZRq">
-                    <rect key="frame" x="10" y="134" width="301" height="337"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-sO-KeB" customClass="EPLButton" customModule="EventsPicLocation" customModuleProvider="target">
-                    <rect key="frame" x="10" y="96" width="301" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="ePS-Hf-87e"/>
-                    </constraints>
-                    <state key="normal" title="Midia"/>
-                    <connections>
-                        <action selector="openCameraViewAction:" destination="-1" eventType="touchUpInside" id="mR7-KF-jCT"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="zwN-sO-KeB" firstAttribute="top" secondItem="pou-bq-AvK" secondAttribute="bottom" constant="8" id="7Wk-UO-8Ng"/>
-                <constraint firstAttribute="trailing" secondItem="4dB-j3-ZRq" secondAttribute="trailing" constant="9" id="CGr-gS-a41"/>
+                <constraint firstItem="Gdq-3x-lVt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="CKd-TF-30b"/>
                 <constraint firstItem="XTI-R7-98Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="JNt-Jk-3Wv"/>
-                <constraint firstItem="zwN-sO-KeB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="XAx-p7-Vy5"/>
-                <constraint firstItem="pou-bq-AvK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aI8-Lt-GQ2"/>
-                <constraint firstAttribute="trailing" secondItem="zwN-sO-KeB" secondAttribute="trailing" constant="9" id="b59-s3-RhE"/>
-                <constraint firstItem="XTI-R7-98Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="bvT-qp-C1L"/>
-                <constraint firstItem="4dB-j3-ZRq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="dra-rN-Lze"/>
-                <constraint firstAttribute="bottom" secondItem="4dB-j3-ZRq" secondAttribute="bottom" constant="9" id="euz-50-8wV"/>
+                <constraint firstAttribute="trailing" secondItem="7b2-cG-Edf" secondAttribute="trailing" constant="16" id="Ki6-PZ-1UB"/>
+                <constraint firstItem="Gdq-3x-lVt" firstAttribute="top" secondItem="7b2-cG-Edf" secondAttribute="bottom" constant="8" id="TY7-u1-TSu"/>
+                <constraint firstItem="pou-bq-AvK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="aI8-Lt-GQ2"/>
+                <constraint firstItem="XTI-R7-98Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="bvT-qp-C1L"/>
+                <constraint firstItem="7b2-cG-Edf" firstAttribute="top" secondItem="pou-bq-AvK" secondAttribute="bottom" constant="8" id="dry-E3-0bU"/>
                 <constraint firstItem="pou-bq-AvK" firstAttribute="top" secondItem="XTI-R7-98Y" secondAttribute="bottom" constant="8" id="gb2-Ou-w8b"/>
-                <constraint firstAttribute="trailing" secondItem="XTI-R7-98Y" secondAttribute="trailing" constant="9" id="s8H-xr-n7M"/>
-                <constraint firstItem="4dB-j3-ZRq" firstAttribute="top" secondItem="zwN-sO-KeB" secondAttribute="bottom" constant="8" id="wbI-AW-8QR"/>
-                <constraint firstAttribute="trailing" secondItem="pou-bq-AvK" secondAttribute="trailing" constant="9" id="zTe-Uo-vFZ"/>
+                <constraint firstAttribute="trailing" secondItem="Gdq-3x-lVt" secondAttribute="trailing" constant="16" id="hqt-Sq-N06"/>
+                <constraint firstItem="7b2-cG-Edf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="pEf-iF-yYq"/>
+                <constraint firstAttribute="trailing" secondItem="XTI-R7-98Y" secondAttribute="trailing" constant="16" id="s8H-xr-n7M"/>
+                <constraint firstItem="Gdq-3x-lVt" firstAttribute="top" secondItem="7b2-cG-Edf" secondAttribute="bottom" constant="8" id="z3s-47-LKM"/>
+                <constraint firstAttribute="trailing" secondItem="pou-bq-AvK" secondAttribute="trailing" constant="16" id="zTe-Uo-vFZ"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="photo" width="48" height="48"/>
+        <image name="picture" width="48" height="48"/>
+    </resources>
 </document>

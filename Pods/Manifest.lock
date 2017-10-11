@@ -1,27 +1,43 @@
 PODS:
+  - Alamofire (4.5.1)
   - DownPicker (0.1.34)
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
+    - GoogleMaps/Base
   - IQKeyboardManager (4.0.10)
   - KYDrawerController (2.0.1)
   - MBProgressHUD (1.0.0)
   - ObjectiveRecord (1.5.0):
     - ObjectiveSugar
   - ObjectiveSugar (1.1.0)
+  - ObjectMapper (3.0.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (= 4.5.1)
   - DownPicker (= 0.1.34)
+  - GoogleMaps (= 2.4.0)
   - IQKeyboardManager (= 4.0.10)
   - KYDrawerController
   - MBProgressHUD (= 1.0.0)
-  - ObjectiveRecord
+  - ObjectiveRecord (= 1.5.0)
+  - ObjectMapper
+  - SwiftyJSON (= 3.1.4)
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
   IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
   KYDrawerController: b716cfa5730dc2133a67efcfc28b3b5a2cff6101
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ObjectiveRecord: f290d17272e476b3c881300910e98284200c54b6
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
+  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 94c53783dbae96f610be272a4363c8e59bdcaa0a
+PODFILE CHECKSUM: d0c8139b1cb60942bb2ce0b61422614bf1d9a2c5
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

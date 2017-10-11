@@ -12,12 +12,6 @@ import KYDrawerController
 class EPLBaseViewController: UIViewController {
     
     override func viewDidLoad() {
-        
-    }
-    
-    func toggleDrawer() {
-        if let mainView = (UIApplication.shared.delegate as? AppDelegate)?.mainView {
-            mainView.setDrawerState(mainView.drawerState == .opened ? .closed : .opened, animated: true)
-        }
-    }
+        self.navigationController?.navigationBar.isTranslucent = false
+    }        
 }

@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A8482B991F770449001D8107 /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B981F770449001D8107 /* MediaRepository.swift */; };
-		A8482B9B1F7705F7001D8107 /* LotteryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9A1F7705F7001D8107 /* LotteryRepository.swift */; };
-		A8482B9D1F770668001D8107 /* EditionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9C1F770668001D8107 /* EditionRepository.swift */; };
-		A8482BA01F77070B001D8107 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9E1F77070B001D8107 /* User+CoreDataClass.swift */; };
-		A8482BA11F77070B001D8107 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8482B9F1F77070B001D8107 /* User+CoreDataProperties.swift */; };
 		A88F3E4D1F1BF13100AE6ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F3E4C1F1BF13100AE6ACC /* AppDelegate.swift */; };
 		A88F3E541F1BF13100AE6ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88F3E531F1BF13100AE6ACC /* Assets.xcassets */; };
 		A88F3E611F1BF19000AE6ACC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F3E5F1F1BF19000AE6ACC /* LoginViewController.swift */; };
@@ -27,31 +22,36 @@
 		A8AE6CD01F76F58300D86431 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */; };
 		A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */; };
 		A8AE6CD51F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */; };
-		A8AE6CE91F77008700D86431 /* Edition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE31F77008700D86431 /* Edition+CoreDataClass.swift */; };
-		A8AE6CEA1F77008700D86431 /* Edition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE41F77008700D86431 /* Edition+CoreDataProperties.swift */; };
-		A8AE6CEB1F77008700D86431 /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE51F77008700D86431 /* Media+CoreDataClass.swift */; };
-		A8AE6CEC1F77008700D86431 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE61F77008700D86431 /* Media+CoreDataProperties.swift */; };
-		A8AE6CED1F77008700D86431 /* Lottery+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE71F77008700D86431 /* Lottery+CoreDataClass.swift */; };
-		A8AE6CEE1F77008700D86431 /* Lottery+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CE81F77008700D86431 /* Lottery+CoreDataProperties.swift */; };
 		A8C0591C1F1CD42A003781D7 /* EPLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */; };
 		A8C059201F1E2310003781D7 /* EPLCameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C0591F1F1E230F003781D7 /* EPLCameraHelper.swift */; };
 		A8C059261F212757003781D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C059241F212757003781D7 /* MainViewController.swift */; };
 		A8C059271F212757003781D7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C059251F212757003781D7 /* MainViewController.xib */; };
-		A8C0592B1F212D16003781D7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C059291F212D16003781D7 /* MenuViewController.swift */; };
-		A8C0592C1F212D16003781D7 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C0592A1F212D16003781D7 /* MenuViewController.xib */; };
 		A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */; };
 		AC4788C2A487A88B4646CDDD /* Pods_EventsPicLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */; };
 		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
+		E2A4A87B1F8D426E0009F603 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8791F8D426E0009F603 /* MapViewController.swift */; };
+		E2A4A87C1F8D426E0009F603 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A87A1F8D426E0009F603 /* MapViewController.xib */; };
+		E2A4A8801F8D484B0009F603 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A87E1F8D484B0009F603 /* SettingsViewController.swift */; };
+		E2A4A8811F8D484B0009F603 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A87F1F8D484B0009F603 /* SettingsViewController.xib */; };
+		E2A4A8921F8E88DB0009F603 /* Lottery+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88A1F8E88DB0009F603 /* Lottery+CoreDataClass.swift */; };
+		E2A4A8931F8E88DB0009F603 /* Lottery+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88B1F8E88DB0009F603 /* Lottery+CoreDataProperties.swift */; };
+		E2A4A8941F8E88DB0009F603 /* Subject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88C1F8E88DB0009F603 /* Subject+CoreDataClass.swift */; };
+		E2A4A8951F8E88DB0009F603 /* Subject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88D1F8E88DB0009F603 /* Subject+CoreDataProperties.swift */; };
+		E2A4A8961F8E88DB0009F603 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88E1F8E88DB0009F603 /* User+CoreDataClass.swift */; };
+		E2A4A8971F8E88DB0009F603 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88F1F8E88DB0009F603 /* User+CoreDataProperties.swift */; };
+		E2A4A8981F8E88DB0009F603 /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8901F8E88DB0009F603 /* Media+CoreDataClass.swift */; };
+		E2A4A8991F8E88DB0009F603 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8911F8E88DB0009F603 /* Media+CoreDataProperties.swift */; };
+		E2A4A89C1F8E89590009F603 /* LotteryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A89B1F8E89590009F603 /* LotteryService.swift */; };
+		E2A4A8A01F8E89B20009F603 /* ServiceApiUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A89F1F8E89B20009F603 /* ServiceApiUtil.swift */; };
+		E2A4A8A21F8E8DF40009F603 /* LotterryVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A11F8E8DF40009F603 /* LotterryVO.swift */; };
+		E2A4A8A41F8E95210009F603 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A31F8E95210009F603 /* ApiService.swift */; };
+		E2A4A8A71F8E95AF0009F603 /* LotterySubjectListsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A61F8E95AF0009F603 /* LotterySubjectListsVO.swift */; };
+		E2A4A8AA1F8E96670009F603 /* SubjectVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A91F8E96670009F603 /* SubjectVO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsPicLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		758510C4447AE44D570D1422 /* Pods-EventsPicLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.debug.xcconfig"; sourceTree = "<group>"; };
-		A8482B981F770449001D8107 /* MediaRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MediaRepository.swift; path = Model/MediaRepository.swift; sourceTree = "<group>"; };
-		A8482B9A1F7705F7001D8107 /* LotteryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryRepository.swift; path = Model/LotteryRepository.swift; sourceTree = "<group>"; };
-		A8482B9C1F770668001D8107 /* EditionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditionRepository.swift; path = Model/EditionRepository.swift; sourceTree = "<group>"; };
-		A8482B9E1F77070B001D8107 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "Model/User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8482B9F1F77070B001D8107 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "Model/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88F3E491F1BF13100AE6ACC /* EventsPicLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsPicLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88F3E4C1F1BF13100AE6ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A88F3E531F1BF13100AE6ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,22 +69,32 @@
 		A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MediaViewController.swift; path = ViewControllers/MediaViewController.swift; sourceTree = "<group>"; };
 		A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MediaViewController.xib; path = ViewControllers/MediaViewController.xib; sourceTree = "<group>"; };
 		A8AE6CD41F76FD0200D86431 /* EventsPicLocationModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsPicLocationModel.xcdatamodel; sourceTree = "<group>"; };
-		A8AE6CE31F77008700D86431 /* Edition+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Edition+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8AE6CE41F77008700D86431 /* Edition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Edition+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8AE6CE51F77008700D86431 /* Media+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8AE6CE61F77008700D86431 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8AE6CE71F77008700D86431 /* Lottery+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lottery+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8AE6CE81F77008700D86431 /* Lottery+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lottery+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8B13BF01F1C454200326AF4 /* EventsPicLocation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventsPicLocation-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLLabel.swift; path = Common/EPLLabel.swift; sourceTree = "<group>"; };
 		A8C0591F1F1E230F003781D7 /* EPLCameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLCameraHelper.swift; path = Common/EPLCameraHelper.swift; sourceTree = "<group>"; };
 		A8C059241F212757003781D7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		A8C059251F212757003781D7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ViewControllers/MainViewController.xib; sourceTree = "<group>"; };
-		A8C059291F212D16003781D7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ViewControllers/MenuViewController.swift; sourceTree = "<group>"; };
-		A8C0592A1F212D16003781D7 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
 		A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLBaseViewController.swift; path = Common/EPLBaseViewController.swift; sourceTree = "<group>"; };
 		DA85193ABA5D7FB28942AC56 /* Pods-EventsPicLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.release.xcconfig"; sourceTree = "<group>"; };
 		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E2A4A8791F8D426E0009F603 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewControllers/MapViewController.swift; sourceTree = "<group>"; };
+		E2A4A87A1F8D426E0009F603 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MapViewController.xib; path = ViewControllers/MapViewController.xib; sourceTree = "<group>"; };
+		E2A4A87E1F8D484B0009F603 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		E2A4A87F1F8D484B0009F603 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewControllers/SettingsViewController.xib; sourceTree = "<group>"; };
+		E2A4A88A1F8E88DB0009F603 /* Lottery+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lottery+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2A4A88B1F8E88DB0009F603 /* Lottery+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lottery+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2A4A88C1F8E88DB0009F603 /* Subject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2A4A88D1F8E88DB0009F603 /* Subject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2A4A88E1F8E88DB0009F603 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2A4A88F1F8E88DB0009F603 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2A4A8901F8E88DB0009F603 /* Media+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2A4A8911F8E88DB0009F603 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2A4A89B1F8E89590009F603 /* LotteryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryService.swift; sourceTree = "<group>"; };
+		E2A4A89F1F8E89B20009F603 /* ServiceApiUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApiUtil.swift; sourceTree = "<group>"; };
+		E2A4A8A11F8E8DF40009F603 /* LotterryVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LotterryVO.swift; path = ServiceApi/LotterryVO.swift; sourceTree = "<group>"; };
+		E2A4A8A31F8E95210009F603 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = ServiceApi/ApiService.swift; sourceTree = "<group>"; };
+		E2A4A8A61F8E95AF0009F603 /* LotterySubjectListsVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LotterySubjectListsVO.swift; path = ServiceApi/LotterySubjectListsVO.swift; sourceTree = "<group>"; };
+		E2A4A8A91F8E96670009F603 /* SubjectVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubjectVO.swift; path = ServiceApi/SubjectVO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +129,8 @@
 		A8482BA21F770712001D8107 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				A8482B9E1F77070B001D8107 /* User+CoreDataClass.swift */,
-				A8482B9F1F77070B001D8107 /* User+CoreDataProperties.swift */,
+				E2A4A88E1F8E88DB0009F603 /* User+CoreDataClass.swift */,
+				E2A4A88F1F8E88DB0009F603 /* User+CoreDataProperties.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -148,7 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A8AE6CD61F76FE8200D86431 /* Model */,
-				A8AE6CD21F76FB2300D86431 /* Data */,
+				A8AE6CD21F76FB2300D86431 /* ServiceApi */,
+				E2A4A89F1F8E89B20009F603 /* ServiceApiUtil.swift */,
 				A88F3E631F1BF1A500AE6ACC /* Common */,
 				A88F3E5E1F1BF17400AE6ACC /* ViewControllers */,
 				A88F3E4C1F1BF13100AE6ACC /* AppDelegate.swift */,
@@ -165,8 +176,9 @@
 		A88F3E5E1F1BF17400AE6ACC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2A4A87D1F8D48350009F603 /* SettingsViewController */,
+				E2A4A8781F8D41F40009F603 /* MapViewController */,
 				A8AE6CCD1F76F53100D86431 /* MediaViewController */,
-				A8C059281F212D00003781D7 /* MenuViewController */,
 				A8C059231F21273B003781D7 /* MainViewController */,
 				A8C0591D1F1CDB0F003781D7 /* LoginViewController */,
 				A8C0591E1F1CDB1C003781D7 /* CameraViewController */,
@@ -192,11 +204,14 @@
 			name = MediaViewController;
 			sourceTree = "<group>";
 		};
-		A8AE6CD21F76FB2300D86431 /* Data */ = {
+		A8AE6CD21F76FB2300D86431 /* ServiceApi */ = {
 			isa = PBXGroup;
 			children = (
+				E2A4A8A81F8E96540009F603 /* Subject */,
+				E2A4A8A51F8E955C0009F603 /* ApiService */,
+				E2A4A89A1F8E89310009F603 /* Lottery */,
 			);
-			name = Data;
+			name = ServiceApi;
 			sourceTree = "<group>";
 		};
 		A8AE6CD61F76FE8200D86431 /* Model */ = {
@@ -205,27 +220,25 @@
 				A8482BA21F770712001D8107 /* User */,
 				A8AE6D301F7703A200D86431 /* Media */,
 				A8AE6D2F1F77039000D86431 /* Lottery */,
-				A8AE6D2E1F77037400D86431 /* Edition */,
+				A8AE6D2E1F77037400D86431 /* Subject */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		A8AE6D2E1F77037400D86431 /* Edition */ = {
+		A8AE6D2E1F77037400D86431 /* Subject */ = {
 			isa = PBXGroup;
 			children = (
-				A8AE6CE31F77008700D86431 /* Edition+CoreDataClass.swift */,
-				A8AE6CE41F77008700D86431 /* Edition+CoreDataProperties.swift */,
-				A8482B9C1F770668001D8107 /* EditionRepository.swift */,
+				E2A4A88C1F8E88DB0009F603 /* Subject+CoreDataClass.swift */,
+				E2A4A88D1F8E88DB0009F603 /* Subject+CoreDataProperties.swift */,
 			);
-			name = Edition;
+			name = Subject;
 			sourceTree = "<group>";
 		};
 		A8AE6D2F1F77039000D86431 /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
-				A8AE6CE71F77008700D86431 /* Lottery+CoreDataClass.swift */,
-				A8AE6CE81F77008700D86431 /* Lottery+CoreDataProperties.swift */,
-				A8482B9A1F7705F7001D8107 /* LotteryRepository.swift */,
+				E2A4A88A1F8E88DB0009F603 /* Lottery+CoreDataClass.swift */,
+				E2A4A88B1F8E88DB0009F603 /* Lottery+CoreDataProperties.swift */,
 			);
 			name = Lottery;
 			sourceTree = "<group>";
@@ -233,9 +246,8 @@
 		A8AE6D301F7703A200D86431 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				A8AE6CE51F77008700D86431 /* Media+CoreDataClass.swift */,
-				A8AE6CE61F77008700D86431 /* Media+CoreDataProperties.swift */,
-				A8482B981F770449001D8107 /* MediaRepository.swift */,
+				E2A4A8901F8E88DB0009F603 /* Media+CoreDataClass.swift */,
+				E2A4A8911F8E88DB0009F603 /* Media+CoreDataProperties.swift */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -288,13 +300,48 @@
 			name = MainViewController;
 			sourceTree = "<group>";
 		};
-		A8C059281F212D00003781D7 /* MenuViewController */ = {
+		E2A4A8781F8D41F40009F603 /* MapViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A8C059291F212D16003781D7 /* MenuViewController.swift */,
-				A8C0592A1F212D16003781D7 /* MenuViewController.xib */,
+				E2A4A8791F8D426E0009F603 /* MapViewController.swift */,
+				E2A4A87A1F8D426E0009F603 /* MapViewController.xib */,
 			);
-			name = MenuViewController;
+			name = MapViewController;
+			sourceTree = "<group>";
+		};
+		E2A4A87D1F8D48350009F603 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4A87E1F8D484B0009F603 /* SettingsViewController.swift */,
+				E2A4A87F1F8D484B0009F603 /* SettingsViewController.xib */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		E2A4A89A1F8E89310009F603 /* Lottery */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4A89B1F8E89590009F603 /* LotteryService.swift */,
+				E2A4A8A11F8E8DF40009F603 /* LotterryVO.swift */,
+			);
+			name = Lottery;
+			sourceTree = "<group>";
+		};
+		E2A4A8A51F8E955C0009F603 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4A8A31F8E95210009F603 /* ApiService.swift */,
+				E2A4A8A61F8E95AF0009F603 /* LotterySubjectListsVO.swift */,
+			);
+			name = ApiService;
+			sourceTree = "<group>";
+		};
+		E2A4A8A81F8E96540009F603 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4A8A91F8E96670009F603 /* SubjectVO.swift */,
+			);
+			name = Subject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,14 +408,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25566AC1F38DCC900D41755 /* .gitignore in Resources */,
-				A8C0592C1F212D16003781D7 /* MenuViewController.xib in Resources */,
 				A88F3E541F1BF13100AE6ACC /* Assets.xcassets in Resources */,
+				E2A4A87C1F8D426E0009F603 /* MapViewController.xib in Resources */,
 				A8C059271F212757003781D7 /* MainViewController.xib in Resources */,
 				A88F3E761F1BFC4F00AE6ACC /* CameraViewController.xib in Resources */,
 				A88F3E6F1F1BF57400AE6ACC /* Localizable.strings in Resources */,
 				A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */,
 				A88F3E621F1BF19000AE6ACC /* LoginViewController.xib in Resources */,
 				A88F3E7A1F1C023200AE6ACC /* Launch.xib in Resources */,
+				E2A4A8811F8D484B0009F603 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,13 +429,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventsPicLocation-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		937C259BBD52D04CC83C671F /* [CP] Copy Pods Resources */ = {
@@ -396,9 +447,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -411,9 +465,28 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectiveRecord/ObjectiveRecord.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectiveSugar/ObjectiveSugar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectiveRecord.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectiveSugar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -427,29 +500,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A4A8AA1F8E96670009F603 /* SubjectVO.swift in Sources */,
+				E2A4A8941F8E88DB0009F603 /* Subject+CoreDataClass.swift in Sources */,
+				E2A4A8A21F8E8DF40009F603 /* LotterryVO.swift in Sources */,
 				A8AE6CD51F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld in Sources */,
 				A88F3E651F1BF1EC00AE6ACC /* EPLUserPreferencesHelper.swift in Sources */,
+				E2A4A8931F8E88DB0009F603 /* Lottery+CoreDataProperties.swift in Sources */,
+				E2A4A8A41F8E95210009F603 /* ApiService.swift in Sources */,
+				E2A4A8A71F8E95AF0009F603 /* LotterySubjectListsVO.swift in Sources */,
+				E2A4A8A01F8E89B20009F603 /* ServiceApiUtil.swift in Sources */,
 				A88F3E611F1BF19000AE6ACC /* LoginViewController.swift in Sources */,
-				A8AE6CE91F77008700D86431 /* Edition+CoreDataClass.swift in Sources */,
-				A8AE6CEA1F77008700D86431 /* Edition+CoreDataProperties.swift in Sources */,
-				A8482B9B1F7705F7001D8107 /* LotteryRepository.swift in Sources */,
+				E2A4A8991F8E88DB0009F603 /* Media+CoreDataProperties.swift in Sources */,
+				E2A4A8951F8E88DB0009F603 /* Subject+CoreDataProperties.swift in Sources */,
 				A8C0591C1F1CD42A003781D7 /* EPLLabel.swift in Sources */,
 				A8C059201F1E2310003781D7 /* EPLCameraHelper.swift in Sources */,
-				A8482BA11F77070B001D8107 /* User+CoreDataProperties.swift in Sources */,
 				A88F3E691F1BF3D100AE6ACC /* EPLHelper.swift in Sources */,
-				A8AE6CEC1F77008700D86431 /* Media+CoreDataProperties.swift in Sources */,
-				A8AE6CED1F77008700D86431 /* Lottery+CoreDataClass.swift in Sources */,
-				A8482B9D1F770668001D8107 /* EditionRepository.swift in Sources */,
 				A8AE6CD01F76F58300D86431 /* MediaViewController.swift in Sources */,
+				E2A4A89C1F8E89590009F603 /* LotteryService.swift in Sources */,
 				A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */,
-				A8482BA01F77070B001D8107 /* User+CoreDataClass.swift in Sources */,
-				A8C0592B1F212D16003781D7 /* MenuViewController.swift in Sources */,
 				A88F3E4D1F1BF13100AE6ACC /* AppDelegate.swift in Sources */,
-				A8AE6CEE1F77008700D86431 /* Lottery+CoreDataProperties.swift in Sources */,
+				E2A4A87B1F8D426E0009F603 /* MapViewController.swift in Sources */,
 				A88F3E671F1BF33000AE6ACC /* EPLTextField.swift in Sources */,
-				A8482B991F770449001D8107 /* MediaRepository.swift in Sources */,
-				A8AE6CEB1F77008700D86431 /* Media+CoreDataClass.swift in Sources */,
+				E2A4A8961F8E88DB0009F603 /* User+CoreDataClass.swift in Sources */,
 				A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */,
+				E2A4A8981F8E88DB0009F603 /* Media+CoreDataClass.swift in Sources */,
+				E2A4A8801F8D484B0009F603 /* SettingsViewController.swift in Sources */,
+				E2A4A8971F8E88DB0009F603 /* User+CoreDataProperties.swift in Sources */,
+				E2A4A8921F8E88DB0009F603 /* Lottery+CoreDataClass.swift in Sources */,
 				A88F3E751F1BFC4F00AE6ACC /* CameraViewController.swift in Sources */,
 				A8C059261F212757003781D7 /* MainViewController.swift in Sources */,
 			);
@@ -574,7 +651,7 @@
 				INFOPLIST_FILE = EventsPicLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.pernambucodasorte.EventsPicLocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.redepos.EventsPicLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventsPicLocation/EventsPicLocation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -592,7 +669,7 @@
 				INFOPLIST_FILE = EventsPicLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.pernambucodasorte.EventsPicLocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.redepos.EventsPicLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventsPicLocation/EventsPicLocation-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
