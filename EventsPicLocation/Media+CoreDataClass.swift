@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import SwiftRecord
 
 @objc(Media)
 public class Media: NSManagedObject {

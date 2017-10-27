@@ -14,6 +14,11 @@ class MapViewController: EPLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("MAP", comment: "")
+        
+        ApiService.getSubjectList { (list) in
+            let l = list
+            let n = ""
+        }
     }
 
     override func didReceiveMemoryWarning() {

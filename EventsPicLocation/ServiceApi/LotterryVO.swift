@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class LotterryVO : Mappable {
+class LotteryVO : Mappable {
     
     var id: Int64?
     var mDescription: String?

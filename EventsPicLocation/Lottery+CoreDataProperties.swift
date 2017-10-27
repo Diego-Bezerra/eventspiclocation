@@ -9,7 +9,8 @@
 
 import Foundation
 import CoreData
-
+import SwiftRecord
+import SwiftRecord
 
 extension Lottery {
 

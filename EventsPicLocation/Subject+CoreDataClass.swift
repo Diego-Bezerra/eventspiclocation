@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import SwiftRecord
 
 @objc(Subject)
 public class Subject: NSManagedObject {

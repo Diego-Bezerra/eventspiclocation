@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import SwiftRecord
 
 @objc(Lottery)
 public class Lottery: NSManagedObject {

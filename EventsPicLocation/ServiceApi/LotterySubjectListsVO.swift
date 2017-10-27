@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class LotterySubjectListsVO : BaseMappable {
+class LotterySubjectListsVO : Mappable {
     
     var lotteries: [LotteryVO]?
     var subjects: [LotteryVO]?
@@ -18,7 +18,7 @@ class LotterySubjectListsVO : BaseMappable {
         
     }
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         lotteries <- map["sorteios"]
         subjects <- map["assuntos"]
     }

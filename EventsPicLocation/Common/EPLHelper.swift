@@ -52,4 +52,10 @@ class EPLHelper {
         view.layer.shadowRadius = 5
         view.layer.shadowOpacity = 0.5
     }
+    
+    static func createBasicAuthString(login:String, password:String) -> String {
+        let loginString = String(format: "%@:%@", login, password)
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        return "Basic \(loginData.base64EncodedString())"
+    }
 }

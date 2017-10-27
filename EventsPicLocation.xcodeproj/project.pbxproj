@@ -21,7 +21,7 @@
 		A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F3E7B1F1C036B00AE6ACC /* EPLButton.swift */; };
 		A8AE6CD01F76F58300D86431 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */; };
 		A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */; };
-		A8AE6CD51F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */; };
+		A8AE6CD51F76FD0200D86431 /* EventsPicLocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8AE6CD31F76FD0200D86431 /* EventsPicLocation.xcdatamodeld */; };
 		A8C0591C1F1CD42A003781D7 /* EPLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */; };
 		A8C059201F1E2310003781D7 /* EPLCameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C0591F1F1E230F003781D7 /* EPLCameraHelper.swift */; };
 		A8C059261F212757003781D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C059241F212757003781D7 /* MainViewController.swift */; };
@@ -29,6 +29,8 @@
 		A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */; };
 		AC4788C2A487A88B4646CDDD /* Pods_EventsPicLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */; };
 		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
+		E27465F71FA269E9002BD372 /* MediaRequestVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27465F61FA269E9002BD372 /* MediaRequestVO.swift */; };
+		E27465FA1FA26B47002BD372 /* MediaVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27465F91FA26B47002BD372 /* MediaVO.swift */; };
 		E2A4A87B1F8D426E0009F603 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8791F8D426E0009F603 /* MapViewController.swift */; };
 		E2A4A87C1F8D426E0009F603 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A87A1F8D426E0009F603 /* MapViewController.xib */; };
 		E2A4A8801F8D484B0009F603 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A87E1F8D484B0009F603 /* SettingsViewController.swift */; };
@@ -77,6 +79,8 @@
 		A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLBaseViewController.swift; path = Common/EPLBaseViewController.swift; sourceTree = "<group>"; };
 		DA85193ABA5D7FB28942AC56 /* Pods-EventsPicLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.release.xcconfig"; sourceTree = "<group>"; };
 		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E27465F61FA269E9002BD372 /* MediaRequestVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRequestVO.swift; sourceTree = "<group>"; };
+		E27465F91FA26B47002BD372 /* MediaVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVO.swift; sourceTree = "<group>"; };
 		E2A4A8791F8D426E0009F603 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewControllers/MapViewController.swift; sourceTree = "<group>"; };
 		E2A4A87A1F8D426E0009F603 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MapViewController.xib; path = ViewControllers/MapViewController.xib; sourceTree = "<group>"; };
 		E2A4A87E1F8D484B0009F603 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +172,7 @@
 				A88F3E711F1BF57400AE6ACC /* Localizable.strings */,
 				A88F3E791F1C023200AE6ACC /* Launch.xib */,
 				A8B13BF01F1C454200326AF4 /* EventsPicLocation-Bridging-Header.h */,
-				A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */,
+				A8AE6CD31F76FD0200D86431 /* EventsPicLocation.xcdatamodeld */,
 			);
 			path = EventsPicLocation;
 			sourceTree = "<group>";
@@ -207,6 +211,7 @@
 		A8AE6CD21F76FB2300D86431 /* ServiceApi */ = {
 			isa = PBXGroup;
 			children = (
+				E27465F81FA26B31002BD372 /* Media */,
 				E2A4A8A81F8E96540009F603 /* Subject */,
 				E2A4A8A51F8E955C0009F603 /* ApiService */,
 				E2A4A89A1F8E89310009F603 /* Lottery */,
@@ -298,6 +303,15 @@
 				A8C059251F212757003781D7 /* MainViewController.xib */,
 			);
 			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		E27465F81FA26B31002BD372 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				E27465F61FA269E9002BD372 /* MediaRequestVO.swift */,
+				E27465F91FA26B47002BD372 /* MediaVO.swift */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 		E2A4A8781F8D41F40009F603 /* MapViewController */ = {
@@ -472,8 +486,7 @@
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectiveRecord/ObjectiveRecord.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectiveSugar/ObjectiveSugar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRecord/SwiftRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -484,8 +497,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectiveRecord.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectiveSugar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,13 +513,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A4A8AA1F8E96670009F603 /* SubjectVO.swift in Sources */,
+				E27465F71FA269E9002BD372 /* MediaRequestVO.swift in Sources */,
 				E2A4A8941F8E88DB0009F603 /* Subject+CoreDataClass.swift in Sources */,
 				E2A4A8A21F8E8DF40009F603 /* LotterryVO.swift in Sources */,
-				A8AE6CD51F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld in Sources */,
+				A8AE6CD51F76FD0200D86431 /* EventsPicLocation.xcdatamodeld in Sources */,
 				A88F3E651F1BF1EC00AE6ACC /* EPLUserPreferencesHelper.swift in Sources */,
 				E2A4A8931F8E88DB0009F603 /* Lottery+CoreDataProperties.swift in Sources */,
 				E2A4A8A41F8E95210009F603 /* ApiService.swift in Sources */,
 				E2A4A8A71F8E95AF0009F603 /* LotterySubjectListsVO.swift in Sources */,
+				E27465FA1FA26B47002BD372 /* MediaVO.swift in Sources */,
 				E2A4A8A01F8E89B20009F603 /* ServiceApiUtil.swift in Sources */,
 				A88F3E611F1BF19000AE6ACC /* LoginViewController.swift in Sources */,
 				E2A4A8991F8E88DB0009F603 /* Media+CoreDataProperties.swift in Sources */,
@@ -700,13 +714,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A8AE6CD31F76FD0200D86431 /* EventsPicLocationModel.xcdatamodeld */ = {
+		A8AE6CD31F76FD0200D86431 /* EventsPicLocation.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				A8AE6CD41F76FD0200D86431 /* EventsPicLocationModel.xcdatamodel */,
 			);
 			currentVersion = A8AE6CD41F76FD0200D86431 /* EventsPicLocationModel.xcdatamodel */;
-			path = EventsPicLocationModel.xcdatamodeld;
+			path = EventsPicLocation.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -15,10 +15,6 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     @IBOutlet weak var txtPassword: EPLTextField!
     @IBOutlet weak var swtKeepConnected: UISwitch!
     
-    //MOCK
-    let login = "diego"
-    let password = "vai"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -34,34 +30,38 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
         self.txtPassword.delegate = self
     }
     
-    func validateUser() -> Bool {
-        //do the logic to send to the web service
+    func validateUser() {
     
         let hudPoint = CGPoint(x: 0, y: 100)
         
         guard let userLogin = self.txtLogin.text?.uppercased(), !userLogin.isEmpty else {
             EPLHelper.showHud(withView: self.view, localizedMessage: "EMPTY_LOGIN", andOffSetPoint: hudPoint)
-            return false
+            return
         }
         guard let userPassword = self.txtPassword.text?.uppercased(), !userPassword.isEmpty else {
             EPLHelper.showHud(withView: self.view, localizedMessage: "EMPTY_PASSWORD", andOffSetPoint: hudPoint)
-            return false
-        }
-        guard userLogin == login.uppercased() && userPassword == password.uppercased() else {
-            EPLHelper.showHud(withView: self.view, localizedMessage: "WRONG_LOGIN_PASSWORD", andOffSetPoint: hudPoint)
-            return false
+            return
         }
         
-        return true
-        
+        ApiService.doLogin { [weak self] (isLogged) in
+            guard let s = self else {
+                return
+            }
+            if isLogged {
+                 s.setUserPreferences()
+                s.openNextViewController()
+            } else {
+                EPLHelper.showHud(withView: s.view, localizedMessage: "WRONG_LOGIN_PASSWORD", andOffSetPoint: hudPoint)
+            }
+        }
     }
     
     func setUserPreferences() {
-        EPLUserPreferencesHelper.setUserLogin(login: self.txtLogin.text!)
+        EPLUserPreferencesHelper.setUserLogin(login: self.txtLogin.text!, password: self.txtPassword.text!)
         EPLUserPreferencesHelper.setKeepConnected(keepConnected: swtKeepConnected.isOn)
     }
     
-    func openCameraViewController() {
+    func openNextViewController() {
         if let mainView = (UIApplication.shared.delegate as? AppDelegate)?.mainView {
             self.present(mainView, animated: true, completion: nil)
         }
@@ -69,10 +69,7 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     
     func enterApp() {
         dismissKeyboard()
-        if validateUser() {
-            setUserPreferences()
-            openCameraViewController()
-        }
+        validateUser()
     }
     
     func dismissKeyboard() {

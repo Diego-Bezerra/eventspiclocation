@@ -10,18 +10,23 @@ import Foundation
 
 class EPLUserPreferencesHelper {
     
-    static let USER_LOGIN_KEY = "userLoginKey"
+    static let USER_LOGIN_PASS_KEY = "userLoginKey"
     static let KEEP_CONNECTED_KEY = "keepConnected"
     
     static func isUserLogged() -> Bool {
-        guard let login = UserDefaults.standard.string(forKey: USER_LOGIN_KEY) else {
+        guard let auth = UserDefaults.standard.string(forKey: USER_LOGIN_PASS_KEY) else {
             return false
         }
-        return !login.isEmpty && isToKeepConnected()
+        return !auth.isEmpty && isToKeepConnected()
     }
     
-    static func setUserLogin(login:String) {
-        UserDefaults.standard.setValue(login, forKey: USER_LOGIN_KEY)
+    static func getUserAuth() -> String? {
+        return UserDefaults.standard.string(forKey: USER_LOGIN_PASS_KEY)
+    }
+    
+    static func setUserLogin(login:String, password:String) {
+        let basicAuth = EPLHelper.createBasicAuthString(login: login, password: password)
+        UserDefaults.standard.setValue(basicAuth, forKey: USER_LOGIN_PASS_KEY)
     }
     
     static func isToKeepConnected() -> Bool {

@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double SwiftRecordVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftRecordVersionString[];
+

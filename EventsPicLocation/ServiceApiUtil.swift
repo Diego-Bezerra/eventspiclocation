@@ -18,7 +18,7 @@ class ServiceApiUtil {
     static let CHANGE_PASSWORD = "/usuario/alterarSenha"
     static let RECOVER_PASSWORD = "/usuario/recuperarSenha"
     
-    public static func getUrl(urlStr:String) -> URL {
-        return URL(fileURLWithPath: "\(API_SERVER)\(urlStr)")
+    public static func getUrl(urlStr:String) -> URL! {
+        return URL(string: "\(ServiceApiUtil.API_SERVER)\(urlStr)")
     }
 }

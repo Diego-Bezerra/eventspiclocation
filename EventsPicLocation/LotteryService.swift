@@ -11,7 +11,5 @@ import Alamofire
 
 class LotteryService {
     
-    func ListLotterry() -> <#return type#> {
-        <#function body#>
-    }
+    
 }
