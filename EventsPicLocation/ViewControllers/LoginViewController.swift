@@ -18,6 +18,7 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,25 +35,29 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     
         let hudPoint = CGPoint(x: 0, y: 100)
         
-        guard let userLogin = self.txtLogin.text?.uppercased(), !userLogin.isEmpty else {
+        guard let userLogin = self.txtLogin.text, !userLogin.isEmpty else {
             EPLHelper.showHud(withView: self.view, localizedMessage: "EMPTY_LOGIN", andOffSetPoint: hudPoint)
             return
         }
-        guard let userPassword = self.txtPassword.text?.uppercased(), !userPassword.isEmpty else {
+        guard let userPassword = self.txtPassword.text, !userPassword.isEmpty else {
             EPLHelper.showHud(withView: self.view, localizedMessage: "EMPTY_PASSWORD", andOffSetPoint: hudPoint)
             return
         }
         
-        ApiService.doLogin { [weak self] (isLogged) in
+        EPLHelper.showProgress(withView: self.view)
+        ApiService.doLogin(login: userLogin, password: userPassword) { [weak self] (isLogged) in
             guard let s = self else {
                 return
             }
             if isLogged {
-                 s.setUserPreferences()
+                s.setUserPreferences()
                 s.openNextViewController()
             } else {
-                EPLHelper.showHud(withView: s.view, localizedMessage: "WRONG_LOGIN_PASSWORD", andOffSetPoint: hudPoint)
+                EPLHelper.showHud(withView: s.view
+                    , localizedMessage: "WRONG_LOGIN_PASSWORD"
+                    , andOffSetPoint: hudPoint)
             }
+            EPLHelper.hideProgress(withView: s.view)
         }
     }
     
@@ -74,6 +79,11 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     
     func dismissKeyboard() {
         self.view.endEditing(true)
+    }
+    
+    @IBAction func forgotLoginPasswordAction(_ sender: Any) {
+        let recoverViewController = RecoverPasswordViewController(nibName: "RecoverPasswordViewController", bundle: nil)
+        self.present(recoverViewController, animated: true, completion: nil)
     }
     
     @IBAction func enterAction(_ sender: Any) {

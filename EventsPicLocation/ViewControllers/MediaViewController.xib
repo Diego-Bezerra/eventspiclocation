@@ -5,16 +5,16 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MediaViewController" customModule="EventsPicLocation" customModuleProvider="target">
             <connections>
                 <outlet property="captureMediaButton" destination="7b2-cG-Edf" id="FGN-Pn-Fda"/>
-                <outlet property="edition" destination="XTI-R7-98Y" id="fMy-RG-Jei"/>
-                <outlet property="event" destination="pou-bq-AvK" id="Iax-TY-ehk"/>
+                <outlet property="lotteryTextView" destination="XTI-R7-98Y" id="67y-gM-AHY"/>
                 <outlet property="mediaLibraryButton" destination="Gdq-3x-lVt" id="YjL-Rt-71O"/>
+                <outlet property="subjectTextView" destination="pou-bq-AvK" id="WK2-ln-BmP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

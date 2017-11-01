@@ -39,11 +39,27 @@ class EPLHelper {
     }
     
     static func showProgress(withView view:UIView) {
-        MBProgressHUD.showAdded(to:view , animated: true)
+        DispatchQueue.main.async {
+            MBProgressHUD.showAdded(to:view , animated: true)
+        }
     }
     
     static func hideProgress(withView view:UIView) {
-        MBProgressHUD.hide(for: view, animated: true)
+       DispatchQueue.main.async {
+            MBProgressHUD.hide(for: view, animated: true)
+        }
+    }
+    
+    static func showAlert(message:String, viewController:UIViewController, completion: @escaping (UIAlertAction) -> Void) {
+        showAlert(title: "", message: message, viewController: viewController, completion: completion)
+    }
+    
+    static func showAlert(title:String?, message:String, viewController:UIViewController, completion: @escaping (UIAlertAction) -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: localized(string: "OK"), style: UIAlertActionStyle.default, handler: { (action) in
+            completion(action)
+        }))
+        viewController.present(alert, animated: true, completion: nil)
     }
     
     static func setViewShadow(view:UIView) {

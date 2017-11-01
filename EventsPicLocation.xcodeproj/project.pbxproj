@@ -49,6 +49,8 @@
 		E2A4A8A41F8E95210009F603 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A31F8E95210009F603 /* ApiService.swift */; };
 		E2A4A8A71F8E95AF0009F603 /* LotterySubjectListsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A61F8E95AF0009F603 /* LotterySubjectListsVO.swift */; };
 		E2A4A8AA1F8E96670009F603 /* SubjectVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A91F8E96670009F603 /* SubjectVO.swift */; };
+		E2E7A2641FA8C77000E43969 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7A2621FA8C77000E43969 /* RecoverPasswordViewController.swift */; };
+		E2E7A2651FA8C77000E43969 /* RecoverPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E7A2631FA8C77000E43969 /* RecoverPasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		E2A4A8A31F8E95210009F603 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = ServiceApi/ApiService.swift; sourceTree = "<group>"; };
 		E2A4A8A61F8E95AF0009F603 /* LotterySubjectListsVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LotterySubjectListsVO.swift; path = ServiceApi/LotterySubjectListsVO.swift; sourceTree = "<group>"; };
 		E2A4A8A91F8E96670009F603 /* SubjectVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubjectVO.swift; path = ServiceApi/SubjectVO.swift; sourceTree = "<group>"; };
+		E2E7A2621FA8C77000E43969 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecoverPasswordViewController.swift; path = ViewControllers/RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		E2E7A2631FA8C77000E43969 /* RecoverPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecoverPasswordViewController.xib; path = ViewControllers/RecoverPasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 		A8C0591D1F1CDB0F003781D7 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E2E7A25F1FA8C73000E43969 /* RecoverPassword */,
 				A88F3E5F1F1BF19000AE6ACC /* LoginViewController.swift */,
 				A88F3E601F1BF19000AE6ACC /* LoginViewController.xib */,
 			);
@@ -358,6 +363,15 @@
 			name = Subject;
 			sourceTree = "<group>";
 		};
+		E2E7A25F1FA8C73000E43969 /* RecoverPassword */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7A2621FA8C77000E43969 /* RecoverPasswordViewController.swift */,
+				E2E7A2631FA8C77000E43969 /* RecoverPasswordViewController.xib */,
+			);
+			name = RecoverPassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,6 +440,7 @@
 				E2A4A87C1F8D426E0009F603 /* MapViewController.xib in Resources */,
 				A8C059271F212757003781D7 /* MainViewController.xib in Resources */,
 				A88F3E761F1BFC4F00AE6ACC /* CameraViewController.xib in Resources */,
+				E2E7A2651FA8C77000E43969 /* RecoverPasswordViewController.xib in Resources */,
 				A88F3E6F1F1BF57400AE6ACC /* Localizable.strings in Resources */,
 				A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */,
 				A88F3E621F1BF19000AE6ACC /* LoginViewController.xib in Resources */,
@@ -534,6 +549,7 @@
 				A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */,
 				A88F3E4D1F1BF13100AE6ACC /* AppDelegate.swift in Sources */,
 				E2A4A87B1F8D426E0009F603 /* MapViewController.swift in Sources */,
+				E2E7A2641FA8C77000E43969 /* RecoverPasswordViewController.swift in Sources */,
 				A88F3E671F1BF33000AE6ACC /* EPLTextField.swift in Sources */,
 				E2A4A8961F8E88DB0009F603 /* User+CoreDataClass.swift in Sources */,
 				A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */,

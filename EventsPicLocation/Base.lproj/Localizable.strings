@@ -11,6 +11,7 @@
 "ENTER" = "Entrar";
 "EMPTY_LOGIN" = "Preencha o campo login";
 "EMPTY_PASSWORD" = "Preencha o campo password";
+"EMPTY_EMAIL" = "Preencha o campo email";
 "WRONG_LOGIN_PASSWORD" = "Login ou senha incorretos";
 "KEPP_LOGGED" = "Manter conectado";
 "PHOTO_UPP" = "FOTO";
@@ -23,3 +24,11 @@
 "CHOOSE_EDITION" = "Escolha a edição";
 "OK" = "Ok";
 "CANCEL" = "Cancelar";
+"FORGOT_LOGIN_PASSWORD" = "Esqueceu login ou senha?";
+"CHANGE_PASSWORD" = "Quer alterar sua senha?";
+"EMAIL" = "Email";
+"RECOVER" = "Recuperar";
+"RECOVER_PASSWORD" = "Recuperar senha";
+"VERIFY_EMAIL" = "Verifique seu email para completar o procedimento.";
+"GENERIC_PROBLEM" = "Hove um problema ao contactar o servidor. Tente novamente mais tarde.";
+

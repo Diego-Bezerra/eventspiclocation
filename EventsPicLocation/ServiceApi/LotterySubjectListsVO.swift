@@ -12,7 +12,7 @@ import ObjectMapper
 class LotterySubjectListsVO : Mappable {
     
     var lotteries: [LotteryVO]?
-    var subjects: [LotteryVO]?
+    var subjects: [SubjectVO]?
     
     required init?(map: Map) {
         

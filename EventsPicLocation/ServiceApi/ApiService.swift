@@ -38,9 +38,10 @@ class ApiService {
         }
     }
     
-    static func doLogin(completion: @escaping (Bool) -> Void) {
+    static func doLogin(login: String, password: String, completion: @escaping (Bool) -> Void) {
         let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.LOGIN)!
-        doRequest(url: url, method: HTTPMethod.post, userHeader: nil) { (r) in
+        let header = ["Authorization": EPLHelper.createBasicAuthString(login: login, password: password)]
+        doRequest(url: url, parameters: nil, method: HTTPMethod.post, userHeader: header) { (r) in
             completion(r.response != nil && r.response!.statusCode == 200)
         }
     }
@@ -53,8 +54,8 @@ class ApiService {
     }
     
     static func recoverPassword(login:String, email:String, completion: @escaping (Bool) -> Void) {
-        let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.CHANGE_PASSWORD)!
-        doRequest(url: url, parameters: ["login" : login, "email" : email], method: HTTPMethod.post) { (r) in
+        let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.RECOVER_PASSWORD)!
+        doRequest(url: url, parameters: ["login" : login, "email" : email], method: HTTPMethod.post, userHeader: nil) { (r) in
             completion(r.response != nil && r.response!.statusCode == 200)
         }
     }
@@ -71,19 +72,27 @@ class ApiService {
         }
     }
     
-    public static func doRequest(url:URL, method:HTTPMethod, completion: @escaping (DataResponse<Any>) -> Void) {
+    public static func doRequest(url:URLConvertible, parameters:[String: Any]?, method:HTTPMethod
+        , completion: @escaping (DataResponse<Any>) -> Void) {
+        let header = ["Authorization": EPLUserPreferencesHelper.getUserAuth()!]
+        doRequest(url: url, parameters: parameters, method: method, userHeader: header, completion: completion)
+    }
+    
+    public static func doRequest(url:URLConvertible, method:HTTPMethod, completion: @escaping (DataResponse<Any>) -> Void) {
         let header = ["Authorization": EPLUserPreferencesHelper.getUserAuth()!]
         doRequest(url: url, parameters: nil, method: method, userHeader: header, completion: completion)
     }
     
-    public static func doRequest(url:URL, parameters:[String: Any]?, method:HTTPMethod, userHeader:[String : Any]?, completion: @escaping (DataResponse<Any>) -> Void) {
+    public static func doRequest(url:URLConvertible, parameters:[String: Any]?, method:HTTPMethod, userHeader:HTTPHeaders?, completion: @escaping (DataResponse<Any>) -> Void) {
         
         Alamofire.request(url
-            , method: HTTPMethod.post
+            , method: method
             , parameters: parameters
-            , encoding: URLEncoding.default
-            , headers: header ?? nil).validate().responseJSON { (response) in
+            , encoding: JSONEncoding.default
+            , headers: userHeader).validate().responseJSON { (response) in
+                
                 completion(response)
         }
+        
     }
 }
