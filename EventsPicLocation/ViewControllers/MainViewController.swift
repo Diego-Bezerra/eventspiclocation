@@ -37,7 +37,7 @@ class MainViewController: UITabBarController {
         
         self.mapViewController = setupTabViewController(viewController: MapViewController(), title: "MAP", image: "map")
         self.mediaViewController = setupTabViewController(viewController: MediaViewController(), title: "MEDIA", image: "photo")
-        self.settingsViewController = setupTabViewController(viewController: MediaViewController(), title: "SETTINGS", image: "settings")
+        self.settingsViewController = setupTabViewController(viewController: SettingsViewController(), title: "SETTINGS", image: "settings")
         
         self.viewControllers = [mapViewController, mediaViewController, settingsViewController]
     }

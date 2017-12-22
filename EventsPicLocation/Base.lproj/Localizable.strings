@@ -31,4 +31,8 @@
 "RECOVER_PASSWORD" = "Recuperar senha";
 "VERIFY_EMAIL" = "Verifique seu email para completar o procedimento.";
 "GENERIC_PROBLEM" = "Hove um problema ao contactar o servidor. Tente novamente mais tarde.";
+"KEEP_LOGGED" = "Manter Loggado";
+"MEDIA_DISPACH" = "Envio de mídia";
+"ONLY_WIFI" = "Somente wifi";
+"LOGOUT" = "Logout";
 

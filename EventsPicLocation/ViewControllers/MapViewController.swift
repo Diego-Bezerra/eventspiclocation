@@ -33,7 +33,7 @@ class MapViewController: EPLBaseViewController {
     func setupGoogleMaps() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -8.058114, longitude:  -34.872469, zoom: 18.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
         view = mapView
