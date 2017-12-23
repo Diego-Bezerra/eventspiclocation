@@ -12,12 +12,13 @@ class EPLUserPreferencesHelper {
     
     static let USER_LOGIN_PASS_KEY = "userLoginKey"
     static let KEEP_CONNECTED_KEY = "keepConnected"
+    static let ONLY_WIFI_KEY = "onlyWifi"
     
     static func isUserLogged() -> Bool {
         guard let auth = UserDefaults.standard.string(forKey: USER_LOGIN_PASS_KEY) else {
             return false
         }
-        return !auth.isEmpty && isToKeepConnected()
+        return !auth.isEmpty && isKeepLogged()
     }
     
     static func getUserAuth() -> String? {
@@ -29,11 +30,19 @@ class EPLUserPreferencesHelper {
         UserDefaults.standard.setValue(basicAuth, forKey: USER_LOGIN_PASS_KEY)
     }
     
-    static func isToKeepConnected() -> Bool {
+    static func isKeepLogged() -> Bool {
         return UserDefaults.standard.bool(forKey: KEEP_CONNECTED_KEY)
     }
     
-    static func setKeepConnected(keepConnected:Bool) {
+    static func setKeepLogged(keepConnected:Bool) {
         UserDefaults.standard.set(keepConnected, forKey: KEEP_CONNECTED_KEY)
+    }
+    
+    static func setOnlyWifi(onlyWifi:Bool) {
+        UserDefaults.standard.set(onlyWifi, forKey: ONLY_WIFI_KEY)
+    }
+    
+    static func isOnlyWifi() -> Bool {
+        return UserDefaults.standard.bool(forKey: ONLY_WIFI_KEY)
     }
 }

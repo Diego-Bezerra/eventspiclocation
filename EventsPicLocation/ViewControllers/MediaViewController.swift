@@ -15,6 +15,9 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var subjectTextView: UITextField!
     @IBOutlet weak var captureMediaButton: UIButton!
     @IBOutlet weak var mediaLibraryButton: UIButton!
+    @IBOutlet weak var noImages: EPLLabel!
+    @IBOutlet weak var thumb: UIImageView!
+    
     
     var imagePicker:UIImagePickerController!
     var lotteryDowPicker:DownPicker!
@@ -32,11 +35,11 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         self.toggleButtons(enable: false)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    
+    func setupCameraView() {
+        
+        
     }
-
+    
     func getLotteryAndSubjectList() {
         EPLHelper.showProgress(withView: self.view)
         ApiService.getLotteryAndSubjectList { [weak self] (lotterySubjectListsVO) in

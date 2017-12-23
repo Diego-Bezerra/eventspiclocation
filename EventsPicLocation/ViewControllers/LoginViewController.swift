@@ -63,7 +63,7 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     
     func setUserPreferences() {
         EPLUserPreferencesHelper.setUserLogin(login: self.txtLogin.text!, password: self.txtPassword.text!)
-        EPLUserPreferencesHelper.setKeepConnected(keepConnected: swtKeepConnected.isOn)
+        EPLUserPreferencesHelper.setKeepLogged(keepConnected: swtKeepConnected.isOn)
     }
     
     func openNextViewController() {

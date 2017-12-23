@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="EventsPicLocation" customModuleProvider="target">
             <connections>
+                <outlet property="keepLoggedSwt" destination="tOF-V9-uRK" id="qXK-IE-ccD"/>
+                <outlet property="onlyWifiSwt" destination="DMB-Rh-ZIo" id="wcl-Kn-exU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -86,7 +88,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xs-cd-zig" customClass="EPLButton" customModule="EventsPicLocation" customModuleProvider="target">
                             <rect key="frame" x="8" y="9" width="359" height="30"/>
-                            <state key="normal" title="LOGOUT"/>
+                            <state key="normal" title="LOGOUT_UPPER"/>
                             <connections>
                                 <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="cKr-RR-pvh"/>
                             </connections>

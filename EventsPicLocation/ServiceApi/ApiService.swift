@@ -93,6 +93,5 @@ class ApiService {
                 
                 completion(response)
         }
-        
     }
 }
