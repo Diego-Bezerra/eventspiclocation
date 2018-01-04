@@ -44,5 +44,9 @@
 	<string>EventsPicLocation</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>É necessário a liberação do microfone para gravar o áudio do video.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Will you allow this app to always know your location?</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>É necessário obter sua localização para o funcionamento correto do aplicativo.</string>
 </dict>
 </plist>

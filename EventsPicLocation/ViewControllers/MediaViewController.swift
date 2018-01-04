@@ -7,17 +7,12 @@
 //
 
 import UIKit
-import DownPicker
 
-class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegate {
+class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
     
     @IBOutlet weak var lotteryTextView: EPLTextField!
     @IBOutlet weak var subjectTextView: UITextField!
-    @IBOutlet weak var captureMediaButton: UIButton!
-    @IBOutlet weak var mediaLibraryButton: UIButton!
-    @IBOutlet weak var noImages: EPLLabel!
-    @IBOutlet weak var thumb: UIImageView!
-    
+    @IBOutlet weak var galleryContainer: UIView!
     
     var imagePicker:UIImagePickerController!
     var lotteryDowPicker:DownPicker!
@@ -25,19 +20,48 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     var editionVal = 0
     var envetVal = 0
     var lotterySubjectListsVO:LotterySubjectListsVO?
+    var galleryViewController: GalleryViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("MEDIA", comment: "")
-        self.captureMediaButton.isEnabled = false
-        //self.setupImagePicker()
+        self.title = EPLHelper.localized(string: "MEDIA")
+        self.setupImagePicker()
+        self.setupNavigationButton()
+        self.setupGalleryContainer()
         self.getLotteryAndSubjectList()
-        self.toggleButtons(enable: false)
+        self.lotteryTextView.isEnabled = false
+        self.subjectTextView.isEnabled = false
     }
 
-    func setupCameraView() {
-        
-        
+    func setupGalleryContainer() {
+        self.galleryViewController = GalleryViewController()
+        galleryViewController.view.frame = CGRect(x: 0
+            , y: 0
+            , width: galleryContainer.frame.size.width
+            , height: galleryContainer.frame.size.height)
+        self.addChildViewController(galleryViewController)
+        galleryContainer.addSubview(galleryViewController.view)
+        galleryViewController.didMove(toParentViewController: self)
+    }
+    
+    func setupNavigationButton() {
+        let rightButon = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add
+            , target: self
+            , action: #selector(addAction))
+        self.navigationItem.rightBarButtonItem = rightButon
+    }
+    
+    func addAction() {
+        if lotteryDowPicker.selectedIndex > 0 && subjectDowPicker.selectedIndex > 0 {
+            UIActionSheet(title: EPLHelper.localized(string: "ADD_NEW_IMAGE")
+                , delegate: self
+                , cancelButtonTitle: EPLHelper.localized(string: "CANCEL")
+                , destructiveButtonTitle: nil
+                , otherButtonTitles: EPLHelper.localized(string: "ADD_FROM_GALLERY"), EPLHelper.localized(string: "TAKE_PICTURE"))
+                .show(in: self.view)
+        } else {
+            EPLHelper.showHud(withView: self.view, andLocalizedMessage: "CHOSSE_VALUES")
+        }
     }
     
     func getLotteryAndSubjectList() {
@@ -52,11 +76,14 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
                 , let loList = lotVo.lotteries
                 , let subList = lotVo.subjects else {
                     
-                EPLHelper.showHud(withView: s.view, andLocalizedMessage: "GENERIC_PROBLEM")
                 EPLHelper.hideProgress(withView: s.view)
-                s.toggleButtons(enable: false)
+                EPLHelper.showHud(withView: s.view, andLocalizedMessage: "GENERIC_PROBLEM")
+                    
                 return
             }
+            
+            s.lotteryTextView.isEnabled = true
+            s.subjectTextView.isEnabled = true
             
             let lotteryList = s.getLotteryStringList(list: loList)
             s.lotteryDowPicker = s.setupDownPicker(
@@ -68,7 +95,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
             let subjectsList = s.getsubjectsStringList(list: subList)
             s.subjectDowPicker = s.setupDownPicker(
                 textField: s.subjectTextView
-                , placeHolder: EPLHelper.localized(string: "CHOOSE_EDITION")
+                , placeHolder: EPLHelper.localized(string: "CHOOSE_EVENT")
                 , list: subjectsList
                 , target: #selector(s.dpSubjectSelected))
             
@@ -94,24 +121,19 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         return listStr
     }
     
-    func toggleButtons(enable:Bool) {
-        captureMediaButton.isEnabled = enable
-        mediaLibraryButton.isEnabled = enable
-    }
-    
     func setupImagePicker() {
         self.imagePicker = UIImagePickerController()
         self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
         self.imagePicker.showsCameraControls = true
-        //self.imagePicker.delegate = self
+        self.imagePicker.delegate = self
         if let mediaTypes = UIImagePickerController.availableMediaTypes(for: self.imagePicker.sourceType) {
             self.imagePicker.mediaTypes = mediaTypes
-            //self.present(imagePicker, animated: true, completion: nil)
         }
     }
     
     func setupDownPicker(textField:UITextField, placeHolder:String, list:Array<String>, target:Selector) -> DownPicker! {
         let downPicker = DownPicker.init(textField: textField, withData: list)
+        downPicker?.setFixedArrowImage(UIImage(named: "expand"))
         downPicker?.setPlaceholder(NSLocalizedString(placeHolder, comment: ""))
         downPicker?.setToolbarDoneButtonText(NSLocalizedString("OK", comment: ""))
         downPicker?.setToolbarCancelButtonText(NSLocalizedString("CANCEL", comment: ""))
@@ -138,6 +160,71 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    //MARK - UIImagePickerControllerDelegate
+    func saveImageFile(image:UIImage) {
+        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+        let newPath = path.appendingPathComponent("image.jpg")
+        let jpgImageData = UIImageJPEGRepresentation(image, 1.0)
+        do {
+            try jpgImageData!.write(to: newPath)
+            galleryViewController.addImageToGallery(path: newPath.absoluteString)
+        } catch {
+            print(error)
+        }
+    }
     
+    func saveVideoFile(videoURL: NSURL) {
+        let videoData = NSData(contentsOf: videoURL as URL)
+        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+        let newPath = path.appendingPathComponent("/videoFileName.mp4")
+        do {
+            try videoData?.write(to: newPath)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func createNewMedia() {
+        
+//        @NSManaged public var date: NSDate?
+//        @NSManaged public var id: Int64
+//        @NSManaged public var lat: Double
+//        @NSManaged public var lng: Double
+//        @NSManaged public var file: String?
+//        @NSManaged public var subject: Subject?
+//        @NSManaged public var lottery: Lottery?
+//        @NSManaged public var user: User?
+        
+        let newMedia:Media = Media.create() as! Media
+        newMedia.date = NSDate()
+        //newMedia.lat =
+    }
+    
+    //MARK - UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            saveImageFile(image: image)
+            
+        } else if let videoURL = info[UIImagePickerControllerMediaURL] as? NSURL {
+            saveVideoFile(videoURL: videoURL)
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK - UIActionSheetDelegate
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        switch (buttonIndex) {
+        case 1:
+            print("Add from gallery")
+        case 2:
+            print("Take picture")
+            self.present(imagePicker, animated: true, completion: nil)
+        default:
+            print("Nothing")
+        }
+    }
 }

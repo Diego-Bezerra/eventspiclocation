@@ -81,6 +81,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self->textField.text = [dataArray objectAtIndex:row];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
@@ -191,9 +192,15 @@
     return NO;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self sendActionsForControlEvents:UIControlEventEditingDidBegin];
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)aTextField {
     // [self doneClicked:aTextField];
     aTextField.userInteractionEnabled = YES;
+    [self sendActionsForControlEvents:UIControlEventEditingDidEnd];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -204,6 +211,11 @@
 -(void) setData:(NSArray*) data
 {
     dataArray = data;
+}
+
+-(void) setFixedArrowImage:(UIImage *)image
+{
+    [self->textField setRightView:[[UIImageView alloc] initWithImage:image]];
 }
 
 -(void) showArrowImage:(BOOL)b

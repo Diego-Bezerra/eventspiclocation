@@ -52,6 +52,7 @@
  TRUE to show the rightmost arrow image, FALSE to hide it.
  */
 -(void) showArrowImage:(BOOL)b;
+-(void) setFixedArrowImage:(UIImage *)image;
 
 -(UIPickerView*) getPickerView;
 -(UITextField*) getTextField;

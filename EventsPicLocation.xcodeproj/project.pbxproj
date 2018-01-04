@@ -28,7 +28,17 @@
 		A8C059271F212757003781D7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C059251F212757003781D7 /* MainViewController.xib */; };
 		A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */; };
 		AC4788C2A487A88B4646CDDD /* Pods_EventsPicLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */; };
+		E21D44B31FF3CE0D00FCFBF1 /* MediaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */; };
+		E21D44B61FF3D0FD00FCFBF1 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */; };
+		E21D44B71FF3D0FD00FCFBF1 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */; };
 		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
+		E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */; };
+		E272FF251FFCFAE40093388B /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */; };
+		E272FF2B1FFD59430093388B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272FF291FFD59430093388B /* PhotoViewController.swift */; };
+		E272FF2C1FFD59430093388B /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E272FF2A1FFD59430093388B /* PhotoViewController.xib */; };
+		E272FF321FFE61F70093388B /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E272FF2E1FFE61F60093388B /* UIDownPicker.m */; };
+		E272FF331FFE61F70093388B /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E272FF2F1FFE61F60093388B /* DownPicker.m */; };
+		E272FF351FFE8C4C0093388B /* EPLLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272FF341FFE8C4C0093388B /* EPLLocationHelper.swift */; };
 		E27465F71FA269E9002BD372 /* MediaRequestVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27465F61FA269E9002BD372 /* MediaRequestVO.swift */; };
 		E27465FA1FA26B47002BD372 /* MediaVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27465F91FA26B47002BD372 /* MediaVO.swift */; };
 		E2A4A87B1F8D426E0009F603 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8791F8D426E0009F603 /* MapViewController.swift */; };
@@ -80,7 +90,19 @@
 		A8C059251F212757003781D7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ViewControllers/MainViewController.xib; sourceTree = "<group>"; };
 		A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLBaseViewController.swift; path = Common/EPLBaseViewController.swift; sourceTree = "<group>"; };
 		DA85193ABA5D7FB28942AC56 /* Pods-EventsPicLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.release.xcconfig"; sourceTree = "<group>"; };
+		E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaMainViewController.swift; path = ViewControllers/MediaMainViewController.swift; sourceTree = "<group>"; };
+		E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ViewControllers/GalleryViewController.swift; sourceTree = "<group>"; };
+		E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GalleryViewController.xib; path = ViewControllers/GalleryViewController.xib; sourceTree = "<group>"; };
 		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaCollectionViewCell.swift; path = ViewControllers/MediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MediaCollectionViewCell.xib; path = ViewControllers/MediaCollectionViewCell.xib; sourceTree = "<group>"; };
+		E272FF291FFD59430093388B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = ViewControllers/PhotoViewController.swift; sourceTree = "<group>"; };
+		E272FF2A1FFD59430093388B /* PhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PhotoViewController.xib; path = ViewControllers/PhotoViewController.xib; sourceTree = "<group>"; };
+		E272FF2E1FFE61F60093388B /* UIDownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDownPicker.m; sourceTree = "<group>"; };
+		E272FF2F1FFE61F60093388B /* DownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownPicker.m; sourceTree = "<group>"; };
+		E272FF301FFE61F70093388B /* UIDownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDownPicker.h; sourceTree = "<group>"; };
+		E272FF311FFE61F70093388B /* DownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownPicker.h; sourceTree = "<group>"; };
+		E272FF341FFE8C4C0093388B /* EPLLocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EPLLocationHelper.swift; path = Common/EPLLocationHelper.swift; sourceTree = "<group>"; };
 		E27465F61FA269E9002BD372 /* MediaRequestVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRequestVO.swift; sourceTree = "<group>"; };
 		E27465F91FA26B47002BD372 /* MediaVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVO.swift; sourceTree = "<group>"; };
 		E2A4A8791F8D426E0009F603 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewControllers/MapViewController.swift; sourceTree = "<group>"; };
@@ -206,8 +228,11 @@
 		A8AE6CCD1F76F53100D86431 /* MediaViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E272FF281FFD59230093388B /* PhotoViewController */,
+				E272FF261FFD58CE0093388B /* GalleryViewController */,
 				A8AE6CCE1F76F58300D86431 /* MediaViewController.swift */,
 				A8AE6CCF1F76F58300D86431 /* MediaViewController.xib */,
+				E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */,
 			);
 			name = MediaViewController;
 			sourceTree = "<group>";
@@ -286,6 +311,7 @@
 				A88F3E681F1BF3D100AE6ACC /* EPLHelper.swift */,
 				A88F3E641F1BF1EC00AE6ACC /* EPLUserPreferencesHelper.swift */,
 				A8C0591F1F1E230F003781D7 /* EPLCameraHelper.swift */,
+				E272FF341FFE8C4C0093388B /* EPLLocationHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -293,6 +319,7 @@
 		A8C059221F1E239B003781D7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E272FF2D1FFE61E20093388B /* DownPicker */,
 				A88F3E661F1BF33000AE6ACC /* EPLTextField.swift */,
 				A88F3E7B1F1C036B00AE6ACC /* EPLButton.swift */,
 				A8C0591B1F1CD42A003781D7 /* EPLLabel.swift */,
@@ -308,6 +335,45 @@
 				A8C059251F212757003781D7 /* MainViewController.xib */,
 			);
 			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		E272FF261FFD58CE0093388B /* GalleryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E272FF271FFD58F50093388B /* MediaCollectionViewCell */,
+				E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */,
+				E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */,
+			);
+			name = GalleryViewController;
+			sourceTree = "<group>";
+		};
+		E272FF271FFD58F50093388B /* MediaCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */,
+				E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */,
+			);
+			name = MediaCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E272FF281FFD59230093388B /* PhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E272FF291FFD59430093388B /* PhotoViewController.swift */,
+				E272FF2A1FFD59430093388B /* PhotoViewController.xib */,
+			);
+			name = PhotoViewController;
+			sourceTree = "<group>";
+		};
+		E272FF2D1FFE61E20093388B /* DownPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E272FF311FFE61F70093388B /* DownPicker.h */,
+				E272FF2F1FFE61F60093388B /* DownPicker.m */,
+				E272FF301FFE61F70093388B /* UIDownPicker.h */,
+				E272FF2E1FFE61F60093388B /* UIDownPicker.m */,
+			);
+			name = DownPicker;
 			sourceTree = "<group>";
 		};
 		E27465F81FA26B31002BD372 /* Media */ = {
@@ -436,12 +502,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25566AC1F38DCC900D41755 /* .gitignore in Resources */,
+				E21D44B71FF3D0FD00FCFBF1 /* GalleryViewController.xib in Resources */,
 				A88F3E541F1BF13100AE6ACC /* Assets.xcassets in Resources */,
 				E2A4A87C1F8D426E0009F603 /* MapViewController.xib in Resources */,
+				E272FF251FFCFAE40093388B /* MediaCollectionViewCell.xib in Resources */,
 				A8C059271F212757003781D7 /* MainViewController.xib in Resources */,
 				A88F3E761F1BFC4F00AE6ACC /* CameraViewController.xib in Resources */,
 				E2E7A2651FA8C77000E43969 /* RecoverPasswordViewController.xib in Resources */,
 				A88F3E6F1F1BF57400AE6ACC /* Localizable.strings in Resources */,
+				E272FF2C1FFD59430093388B /* PhotoViewController.xib in Resources */,
 				A8AE6CD11F76F58300D86431 /* MediaViewController.xib in Resources */,
 				A88F3E621F1BF19000AE6ACC /* LoginViewController.xib in Resources */,
 				A88F3E7A1F1C023200AE6ACC /* Launch.xib in Resources */,
@@ -496,22 +565,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ISHPullUp/ISHPullUp.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRecord/SwiftRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISHPullUp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -527,13 +598,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E272FF321FFE61F70093388B /* UIDownPicker.m in Sources */,
 				E2A4A8AA1F8E96670009F603 /* SubjectVO.swift in Sources */,
+				E21D44B61FF3D0FD00FCFBF1 /* GalleryViewController.swift in Sources */,
 				E27465F71FA269E9002BD372 /* MediaRequestVO.swift in Sources */,
 				E2A4A8941F8E88DB0009F603 /* Subject+CoreDataClass.swift in Sources */,
 				E2A4A8A21F8E8DF40009F603 /* LotterryVO.swift in Sources */,
+				E272FF2B1FFD59430093388B /* PhotoViewController.swift in Sources */,
 				A8AE6CD51F76FD0200D86431 /* EventsPicLocation.xcdatamodeld in Sources */,
+				E21D44B31FF3CE0D00FCFBF1 /* MediaMainViewController.swift in Sources */,
 				A88F3E651F1BF1EC00AE6ACC /* EPLUserPreferencesHelper.swift in Sources */,
 				E2A4A8931F8E88DB0009F603 /* Lottery+CoreDataProperties.swift in Sources */,
+				E272FF351FFE8C4C0093388B /* EPLLocationHelper.swift in Sources */,
 				E2A4A8A41F8E95210009F603 /* ApiService.swift in Sources */,
 				E2A4A8A71F8E95AF0009F603 /* LotterySubjectListsVO.swift in Sources */,
 				E27465FA1FA26B47002BD372 /* MediaVO.swift in Sources */,
@@ -554,7 +630,9 @@
 				E2A4A8961F8E88DB0009F603 /* User+CoreDataClass.swift in Sources */,
 				A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */,
 				E2A4A8981F8E88DB0009F603 /* Media+CoreDataClass.swift in Sources */,
+				E272FF331FFE61F70093388B /* DownPicker.m in Sources */,
 				E2A4A8801F8D484B0009F603 /* SettingsViewController.swift in Sources */,
+				E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */,
 				E2A4A8971F8E88DB0009F603 /* User+CoreDataProperties.swift in Sources */,
 				E2A4A8921F8E88DB0009F603 /* Lottery+CoreDataClass.swift in Sources */,
 				A88F3E751F1BFC4F00AE6ACC /* CameraViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 
 class ServiceApiUtil {
     
-    static let API_SERVER = "https://shielded-stream-35007.herokuapp.com"
+    static let API_SERVER = "https://pesorte.herokuapp.com"
     static let LIST_LOTTERY_SUBJECT = "/filtro/listar"
     static let LIST_SUBJECT = "/assunto/listar"
     static let LOGIN = "/login"

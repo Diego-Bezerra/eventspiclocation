@@ -72,25 +72,28 @@ class ApiService {
         }
     }
     
-    public static func doRequest(url:URLConvertible, parameters:[String: Any]?, method:HTTPMethod
+    public static func doRequest(url:URL, parameters:[String: Any]?, method:HTTPMethod
         , completion: @escaping (DataResponse<Any>) -> Void) {
         let header = ["Authorization": EPLUserPreferencesHelper.getUserAuth()!]
         doRequest(url: url, parameters: parameters, method: method, userHeader: header, completion: completion)
     }
     
-    public static func doRequest(url:URLConvertible, method:HTTPMethod, completion: @escaping (DataResponse<Any>) -> Void) {
+    public static func doRequest(url:URL, method:HTTPMethod, completion: @escaping (DataResponse<Any>) -> Void) {
         let header = ["Authorization": EPLUserPreferencesHelper.getUserAuth()!]
         doRequest(url: url, parameters: nil, method: method, userHeader: header, completion: completion)
     }
     
-    public static func doRequest(url:URLConvertible, parameters:[String: Any]?, method:HTTPMethod, userHeader:HTTPHeaders?, completion: @escaping (DataResponse<Any>) -> Void) {
+    public static func doRequest(url:URL, parameters:[String: Any]?, method:HTTPMethod, userHeader:HTTPHeaders?, completion: @escaping (DataResponse<Any>) -> Void) {
         
-        Alamofire.request(url
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 10
+        
+        manager.request(url
             , method: method
             , parameters: parameters
             , encoding: JSONEncoding.default
             , headers: userHeader).validate().responseJSON { (response) in
-                
+
                 completion(response)
         }
     }

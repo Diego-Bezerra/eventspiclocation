@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoViewController" customModule="EventsPicLocation" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="hoV-7P-80V" id="jbh-Jv-DAH"/>
+                <outlet property="scrollView" destination="Ywc-sb-IVh" id="9af-Yt-V82"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywc-sb-IVh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-7P-80V">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="hoV-7P-80V" firstAttribute="centerY" secondItem="Ywc-sb-IVh" secondAttribute="centerY" id="0MV-41-XRa"/>
+                        <constraint firstAttribute="trailing" secondItem="hoV-7P-80V" secondAttribute="trailing" id="8UO-jP-ZE4"/>
+                        <constraint firstItem="hoV-7P-80V" firstAttribute="top" secondItem="Ywc-sb-IVh" secondAttribute="top" id="RLV-kn-hQp"/>
+                        <constraint firstItem="hoV-7P-80V" firstAttribute="centerX" secondItem="Ywc-sb-IVh" secondAttribute="centerX" id="Uu0-ve-G6T"/>
+                        <constraint firstItem="hoV-7P-80V" firstAttribute="leading" secondItem="Ywc-sb-IVh" secondAttribute="leading" id="xjC-PC-eAy"/>
+                        <constraint firstAttribute="bottom" secondItem="hoV-7P-80V" secondAttribute="bottom" id="z6a-sW-kqg"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ywc-sb-IVh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bIo-XI-Zdr"/>
+                <constraint firstAttribute="trailing" secondItem="Ywc-sb-IVh" secondAttribute="trailing" id="fhR-Hz-Gui"/>
+                <constraint firstItem="Ywc-sb-IVh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ksP-Zl-Bcm"/>
+                <constraint firstAttribute="bottom" secondItem="Ywc-sb-IVh" secondAttribute="bottom" id="rxm-oE-JWZ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

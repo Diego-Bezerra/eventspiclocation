@@ -8,6 +8,7 @@
 
 import Foundation
 import MBProgressHUD
+import SDWebImage
 
 class EPLHelper {
     
@@ -39,15 +40,16 @@ class EPLHelper {
     }
     
     static func showProgress(withView view:UIView) {
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
             MBProgressHUD.showAdded(to:view , animated: true)
-        }
+        //}
     }
     
     static func hideProgress(withView view:UIView) {
-       DispatchQueue.main.async {
+       //DispatchQueue.main.async {
             MBProgressHUD.hide(for: view, animated: true)
-        }
+        
+        //}
     }
     
     static func showAlert(message:String, viewController:UIViewController, completion: @escaping (UIAlertAction) -> Void) {
@@ -73,5 +75,24 @@ class EPLHelper {
         let loginString = String(format: "%@:%@", login, password)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         return "Basic \(loginData.base64EncodedString())"
+    }
+    
+    static func setImage(imageView:UIImageView, url:String?) {
+        
+        guard let urlStr = url else {
+            imageView.image = UIImage(named: "warning")
+            return
+        }
+        
+        let url = URL(string: urlStr)
+        let imagePlaceHolder = UIImage(named: "picture")
+        
+        imageView.sd_setImage(with: url
+            , placeholderImage: imagePlaceHolder
+        , options: SDWebImageOptions.cacheMemoryOnly) { (image, error, cacheType, url) in
+            if error != nil {
+                imageView.image = UIImage(named: "warning")
+            }
+        }
     }
 }
