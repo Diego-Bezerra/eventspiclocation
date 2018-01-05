@@ -23,13 +23,16 @@ class SubjectVO : Mappable {
         mDescription <- map["descricao"]
     }
     
-    func saveToCoreData() {
+    func findOrCreate() -> Subject? {
+        var subject:Subject?
         if let selfId = self.id {
             if let model = Subject.findOrCreate(["id" : selfId]) as? Subject {
                 model.mDescription = self.mDescription
-                model.save()
+                subject = model
             }
         }
+        
+        return subject
     }
     
 }

@@ -10,16 +10,32 @@ import Foundation
 import ObjectMapper
 
 class MediaVO : Mappable {
-
-    var extensao:String?
-    var arquivo:String?
+    
+    var id: Int64?
+    var date: NSDate?
+    var lat: Double?
+    var lng: Double?
+    var file: String?
+    var mimeType: String?
+    var subject: SubjectVO?
+    var lottery: LotteryVO?
+    var user: User?
 
     required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    init() {
         
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        date <- map["dataHora"]
+        lat <- map["latitude"]
+        lng <- map["longitude"]
+        mimeType <- map["mimeType"]
+        user <- map["usuario"]
     }
 }
 

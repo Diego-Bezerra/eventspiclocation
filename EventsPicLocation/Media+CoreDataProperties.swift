@@ -22,6 +22,7 @@ extension Media {
     @NSManaged public var lat: Double
     @NSManaged public var lng: Double
     @NSManaged public var file: String?
+    @NSManaged public var mimeType: String?
     @NSManaged public var subject: Subject?
     @NSManaged public var lottery: Lottery?
     @NSManaged public var user: User?

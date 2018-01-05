@@ -41,5 +41,5 @@
 "ADD_FROM_GALLERY" = "Adicionar da galeria";
 "TAKE_PICTURE" = "Tirar uma foto";
 "CHOSSE_VALUES" = "Escolha a edição e o assunto antes de adicionar uma foto";
-
+"LOCATION_ERROR" = "Não foi possível obter sua localização.";
 

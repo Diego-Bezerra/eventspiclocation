@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         setupGoogleMaps()
+        EPLLocationHelper.sharedInstance.determineMyCurrentLocation()
         
         self.mainView = MainViewController()
         let firstViewController = EPLUserPreferencesHelper.isUserLogged() ?

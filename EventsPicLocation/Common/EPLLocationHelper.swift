@@ -11,7 +11,8 @@ import CoreLocation
 
 class EPLLocationHelper: NSObject, CLLocationManagerDelegate {
     
-    var locationManager:CLLocationManager!
+    private var locationManager:CLLocationManager!
+    private var currentLocation:CLLocation?
     static let sharedInstance = EPLLocationHelper()
 
     func determineMyCurrentLocation() {
@@ -25,14 +26,17 @@ class EPLLocationHelper: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func getCurrentLocation() -> CLLocation? {
+        return currentLocation
+    }
+    
     //MARK: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
-        
+        self.currentLocation = locations[0] as CLLocation
         //manager.stopUpdatingLocation()
         
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
+        print("user latitude = \(self.currentLocation?.coordinate.latitude)")
+        print("user longitude = \(self.currentLocation?.coordinate.longitude)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

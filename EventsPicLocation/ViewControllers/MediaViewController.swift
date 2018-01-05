@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
     
@@ -17,11 +18,14 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     var imagePicker:UIImagePickerController!
     var lotteryDowPicker:DownPicker!
     var subjectDowPicker:DownPicker!
-    var editionVal = 0
-    var envetVal = 0
     var lotterySubjectListsVO:LotterySubjectListsVO?
+    var selectedLottery:LotteryVO?
+    var selectedSubject:SubjectVO?
     var galleryViewController: GalleryViewController!
-
+    
+    let photoPrefix = "photo"
+    let videoPrefix = "video"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = EPLHelper.localized(string: "MEDIA")
@@ -143,11 +147,11 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     }
 
     func dpLotterySelected() {
-        self.editionVal = 3
+        self.selectedLottery = lotterySubjectListsVO?.lotteries?[lotteryDowPicker.selectedIndex]
     }
     
     func dpSubjectSelected() {
-        //self.even = 3
+        self.selectedSubject = lotterySubjectListsVO?.subjects?[subjectDowPicker.selectedIndex]
     }
     
     @IBAction func captureMediasAction(_ sender: Any) {
@@ -162,7 +166,8 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     
     func saveImageFile(image:UIImage) {
         let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-        let newPath = path.appendingPathComponent("image.jpg")
+        let fileName = EPLHelper.uniqueFilename(prefix: photoPrefix)
+        let newPath = path.appendingPathComponent(fileName)
         let jpgImageData = UIImageJPEGRepresentation(image, 1.0)
         do {
             try jpgImageData!.write(to: newPath)
@@ -175,7 +180,8 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     func saveVideoFile(videoURL: NSURL) {
         let videoData = NSData(contentsOf: videoURL as URL)
         let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-        let newPath = path.appendingPathComponent("/videoFileName.mp4")
+        let fileName = EPLHelper.uniqueFilename(prefix: videoPrefix)
+        let newPath = path.appendingPathComponent(fileName)
         do {
             try videoData?.write(to: newPath)
         } catch {
@@ -183,20 +189,40 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         }
     }
     
-    func createNewMedia() {
+    func createNewMedia(filePath:String) {
         
-//        @NSManaged public var date: NSDate?
-//        @NSManaged public var id: Int64
-//        @NSManaged public var lat: Double
-//        @NSManaged public var lng: Double
-//        @NSManaged public var file: String?
-//        @NSManaged public var subject: Subject?
-//        @NSManaged public var lottery: Lottery?
-//        @NSManaged public var user: User?
+        let location:CLLocation? = EPLLocationHelper.sharedInstance.getCurrentLocation()
+        guard let lat = location?.coordinate.latitude, let lng = location?.coordinate.longitude else {
+            EPLHelper.showHud(withView: self.view, andLocalizedMessage: "LOCATION_ERROR")
+            return;
+        }
+        guard let sub = selectedSubject, let lot = selectedLottery else {
+            EPLHelper.showHud(withView: self.view, andLocalizedMessage: "CHOSSE_VALUES")
+            return
+        }
         
-        let newMedia:Media = Media.create() as! Media
+        let newMedia = MediaRequestVO()
         newMedia.date = NSDate()
-        //newMedia.lat =
+        newMedia.lat = lat
+        newMedia.lng = lng
+        newMedia.file = filePath
+        newMedia.mimeType = "image/jpeg"
+        newMedia.subject = sub.findOrCreate()
+        newMedia.lottery = lot.findOrCreate()
+        
+        
+        ApiService.saveMedia(media: <#T##MediaRequestVO#>, completion: <#T##(Bool) -> Void#>)
+        
+        let newMedia = MediaVO()
+        newMedia.date = NSDate()
+        newMedia.lat = lat
+        newMedia.lng = lng
+        newMedia.file = filePath
+        newMedia.mimeType = "image/jpeg"
+        newMedia.subject = sub.findOrCreate()
+        newMedia.lottery = lot.findOrCreate()
+        
+        newMedia.save()
     }
     
     //MARK - UIImagePickerControllerDelegate

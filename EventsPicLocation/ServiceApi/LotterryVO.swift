@@ -22,4 +22,16 @@ class LotteryVO : Mappable {
         id <- map["id"]
         mDescription <- map["descricao"]
     }
+    
+    func findOrCreate() -> Lottery? {
+        var lottery:Lottery?
+        if let selfId = self.id {
+            if let model = Lottery.findOrCreate(["id" : selfId]) as? Lottery {
+                model.mDescription = self.mDescription
+                lottery = model
+            }
+        }
+        
+        return lottery
+    }
 }

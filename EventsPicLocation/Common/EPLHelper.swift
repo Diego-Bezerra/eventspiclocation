@@ -95,4 +95,14 @@ class EPLHelper {
             }
         }
     }
+    
+    static func uniqueFilename(prefix: String? = nil) -> String {
+        let uniqueString = ProcessInfo.processInfo.globallyUniqueString
+        
+        if prefix != nil {
+            return "\(prefix!)-\(uniqueString)"
+        }
+        
+        return uniqueString
+    }
 }

@@ -20,7 +20,7 @@ class ApiService {
                 var list = Array<SubjectVO>()
                 for item:Dictionary<String, Any> in val {
                     if let sub = SubjectVO(JSON: item) {
-                        sub.saveToCoreData()
+                        //sub.saveToCoreData()
                         list.append(sub)
                     }
                 }
