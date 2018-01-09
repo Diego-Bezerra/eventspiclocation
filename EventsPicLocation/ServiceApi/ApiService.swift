@@ -31,11 +31,53 @@ class ApiService {
         }        
     }
     
-    static func saveMedia(media:MediaRequestVO, completion: @escaping (Bool) -> Void) {
+    static func saveMedia(media:MediaRequestVO, fileName:String, completion: @escaping (Bool) -> Void) {
         let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.SAVE_MEDIA)!
         doRequest(url: url, parameters:media.toJSON(), method: HTTPMethod.post) { (r) in
-            completion(r.response != nil && r.response!.statusCode == 200)
+            if let val = r.result.value as? Dictionary<String, Any>, r.error == nil {
+                if let apiId = val["id"] as? Int64 {
+                    saveMediaCore(mediaId: apiId, fileName: fileName, withRequest: media)
+                    completion(true)
+                    return
+                }
+            }
+            
+            completion(false)
         }
+    }
+    
+    private static func saveMediaCore(mediaId:Int64, fileName:String, withRequest media:MediaRequestVO) {
+        let mediaCore = Media.findOrCreate(["id" : mediaId]) as! Media
+        mediaCore.date = media.dataHora
+        mediaCore.id = mediaId
+        mediaCore.lat = media.latitude ?? 0
+        mediaCore.lng = media.longitude ?? 0
+        mediaCore.file = saveFileMediaInfo(fileName: fileName, mimeType: media.mimeType ?? "")
+        mediaCore.mimeType = media.mimeType
+        mediaCore.lottery = media.idSorteio ?? 0
+        mediaCore.subject = media.idAssunto ?? 0
+        mediaCore.save()
+    }
+    
+    private static func saveFileMediaInfo(fileName:String, mimeType:String) -> FileMediaInfo? {
+        if let fileMediaInfo = FileMediaInfo.findOrCreate(["name" : fileName]) as? FileMediaInfo {
+            fileMediaInfo.sync = false
+            fileMediaInfo.creationDate = Date()
+            fileMediaInfo.name = fileName
+            fileMediaInfo.mimeType = mimeType
+            fileMediaInfo.save()
+            
+            return fileMediaInfo
+        }
+        
+        return nil
+    }
+    
+    static func getMedia(mediaId:Int, completion: @escaping (Bool) -> Void) {
+//        let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.SAVE_MEDIA)!
+//        doRequest(url: url, parameters:media.toJSON(), method: HTTPMethod.post) { (r) in
+//            completion(r.response != nil && r.response!.statusCode == 200)
+//        }
     }
     
     static func doLogin(login: String, password: String, completion: @escaping (Bool) -> Void) {

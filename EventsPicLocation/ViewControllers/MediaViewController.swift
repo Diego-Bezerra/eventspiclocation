@@ -24,7 +24,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     var galleryViewController: GalleryViewController!
     
     let photoPrefix = "photo"
-    let videoPrefix = "video"
+    let videoPrefix = "video"        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     }
     
     func addAction() {
-        if lotteryDowPicker.selectedIndex > 0 && subjectDowPicker.selectedIndex > 0 {
+        if selectedLottery != nil && selectedSubject != nil {
             UIActionSheet(title: EPLHelper.localized(string: "ADD_NEW_IMAGE")
                 , delegate: self
                 , cancelButtonTitle: EPLHelper.localized(string: "CANCEL")
@@ -85,6 +85,8 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
                     
                 return
             }
+            
+            s.lotterySubjectListsVO = lotterySubjectListsVO
             
             s.lotteryTextView.isEnabled = true
             s.subjectTextView.isEnabled = true
@@ -141,17 +143,26 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         downPicker?.setPlaceholder(NSLocalizedString(placeHolder, comment: ""))
         downPicker?.setToolbarDoneButtonText(NSLocalizedString("OK", comment: ""))
         downPicker?.setToolbarCancelButtonText(NSLocalizedString("CANCEL", comment: ""))
-        downPicker?.addTarget(self, action: target, for: .valueChanged)
+        downPicker?.addTarget(self, action: target, for: .editingDidEnd)
+        
         
         return downPicker
     }
 
     func dpLotterySelected() {
         self.selectedLottery = lotterySubjectListsVO?.lotteries?[lotteryDowPicker.selectedIndex]
+        reloadGallery()
     }
     
     func dpSubjectSelected() {
         self.selectedSubject = lotterySubjectListsVO?.subjects?[subjectDowPicker.selectedIndex]
+        reloadGallery()
+    }
+    
+    func reloadGallery() {
+        let lotId = selectedLottery?.id
+        let subId = selectedSubject?.id
+        galleryViewController.setLotteryId(lotId: lotId, andSubjectId: subId)
     }
     
     @IBAction func captureMediasAction(_ sender: Any) {
@@ -164,74 +175,90 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    func saveImageFile(image:UIImage) {
-        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-        let fileName = EPLHelper.uniqueFilename(prefix: photoPrefix)
-        let newPath = path.appendingPathComponent(fileName)
+    func saveImageFile(image:UIImage, fileName:String) {
+        
+        let newPath = EPLHelper.getFileURL(fileName: fileName)
         let jpgImageData = UIImageJPEGRepresentation(image, 1.0)
         do {
             try jpgImageData!.write(to: newPath)
-            galleryViewController.addImageToGallery(path: newPath.absoluteString)
         } catch {
             print(error)
         }
     }
     
-    func saveVideoFile(videoURL: NSURL) {
+    func saveVideoFile(videoURL: NSURL, fileName:String) {
+        
         let videoData = NSData(contentsOf: videoURL as URL)
-        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-        let fileName = EPLHelper.uniqueFilename(prefix: videoPrefix)
-        let newPath = path.appendingPathComponent(fileName)
+        let newPath = EPLHelper.getFileURL(fileName: fileName)
         do {
-            try videoData?.write(to: newPath)
+            try videoData!.write(to: newPath)
         } catch {
             print(error)
         }
     }
     
-    func createNewMedia(filePath:String) {
+    func createNewMedia(fileName:String, fileMimeType:FileMediaInfo.FileMimeType, completion: @escaping (Bool) -> Void)  {
+        
+        EPLHelper.showProgress(withView: self.view)
         
         let location:CLLocation? = EPLLocationHelper.sharedInstance.getCurrentLocation()
         guard let lat = location?.coordinate.latitude, let lng = location?.coordinate.longitude else {
             EPLHelper.showHud(withView: self.view, andLocalizedMessage: "LOCATION_ERROR")
+            EPLHelper.hideProgress(withView: self.view)
+            completion(false)
             return;
         }
         guard let sub = selectedSubject, let lot = selectedLottery else {
             EPLHelper.showHud(withView: self.view, andLocalizedMessage: "CHOSSE_VALUES")
+            EPLHelper.hideProgress(withView: self.view)
+            completion(false)
             return
         }
-        
-        let newMedia = MediaRequestVO()
-        newMedia.date = NSDate()
-        newMedia.lat = lat
-        newMedia.lng = lng
-        newMedia.file = filePath
-        newMedia.mimeType = "image/jpeg"
-        newMedia.subject = sub.findOrCreate()
-        newMedia.lottery = lot.findOrCreate()
-        
-        
-        ApiService.saveMedia(media: <#T##MediaRequestVO#>, completion: <#T##(Bool) -> Void#>)
-        
-        let newMedia = MediaVO()
-        newMedia.date = NSDate()
-        newMedia.lat = lat
-        newMedia.lng = lng
-        newMedia.file = filePath
-        newMedia.mimeType = "image/jpeg"
-        newMedia.subject = sub.findOrCreate()
-        newMedia.lottery = lot.findOrCreate()
-        
-        newMedia.save()
-    }
+
+        if let newMedia = MediaRequestVO(JSON: [String : Any]()) {
+            newMedia.login = EPLUserPreferencesHelper.getUserAuth()
+            newMedia.dataHora = Date()
+            newMedia.latitude = lat
+            newMedia.longitude = lng
+            newMedia.mimeType = FileMediaInfo.getMimeTypeStr(fileMimeType: fileMimeType)
+            newMedia.idAssunto = lot.id
+            newMedia.idSorteio = sub.id
+            
+            ApiService.saveMedia(media: newMedia, fileName: fileName, completion: { [unowned self] (isSuccess) in
+                if !isSuccess {
+                    EPLHelper.showHud(withView: self.view, andLocalizedMessage: "SAVE_MEDIA_PROBLEM")
+                    completion(false)
+                } else {
+                    completion(true)
+                    self.galleryViewController.reload()
+                }
+                EPLHelper.hideProgress(withView: self.view)
+            })
+        } else {
+            EPLHelper.showHud(withView: self.view, andLocalizedMessage: "SAVE_MEDIA_PROBLEM")
+            EPLHelper.hideProgress(withView: self.view)
+            completion(false)
+        }
+    }        
     
     //MARK - UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            saveImageFile(image: image)
-            
+            let fileName = EPLHelper.uniqueFilename(prefix: photoPrefix)
+            createNewMedia(fileName: fileName, fileMimeType: FileMediaInfo.FileMimeType.Imagem, completion: { [unowned self] (isSuccess) in
+                if isSuccess {
+                    self.saveImageFile(image: image, fileName: fileName)
+                    self.galleryViewController.reload()
+                }
+            })
         } else if let videoURL = info[UIImagePickerControllerMediaURL] as? NSURL {
-            saveVideoFile(videoURL: videoURL)
+            let fileName = EPLHelper.uniqueFilename(prefix: videoPrefix)
+            createNewMedia(fileName: fileName, fileMimeType: FileMediaInfo.FileMimeType.Video, completion: { [unowned self] (isSuccess) in
+                if isSuccess {
+                    self.saveVideoFile(videoURL: videoURL, fileName: fileName)
+                    self.galleryViewController.reload()
+                }
+            })
         }
         
         picker.dismiss(animated: true, completion: nil)
@@ -245,9 +272,10 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         switch (buttonIndex) {
         case 1:
-            print("Add from gallery")
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
         case 2:
-            print("Take picture")
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             self.present(imagePicker, animated: true, completion: nil)
         default:
             print("Nothing")

@@ -14,11 +14,11 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
 
-    var imageUrlStr:String?
+    var fileName:String?
     
-    init(imageUrlStr: String) {
+    init(fileName: String) {
         super.init(nibName: "PhotoViewController", bundle: nil)
-        self.imageUrlStr = imageUrlStr
+        self.fileName = fileName
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,9 +28,24 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
-        EPLHelper.setImage(imageView: self.imageView, url: self.imageUrlStr)
+        setImage(imageView: self.imageView, fileName: self.fileName)
     }
 
+    func setImage(imageView:UIImageView, fileName:String?) {
+        
+        guard let fName = fileName else {
+            imageView.image = UIImage(named: "warning")
+            return
+        }
+        
+        let url = EPLHelper.getFileURL(fileName: fName)
+        do {
+            imageView.image = try UIImage(data: Data(contentsOf: url))
+        } catch {
+            let e = error
+        }
+    }
+    
     func setupScrollView() {
         self.scrollView.minimumZoomScale = 1;
         self.scrollView.maximumZoomScale = 6.0;

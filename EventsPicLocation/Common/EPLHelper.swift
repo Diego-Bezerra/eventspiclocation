@@ -9,6 +9,7 @@
 import Foundation
 import MBProgressHUD
 import SDWebImage
+import AVFoundation
 
 class EPLHelper {
     
@@ -75,34 +76,34 @@ class EPLHelper {
         let loginString = String(format: "%@:%@", login, password)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         return "Basic \(loginData.base64EncodedString())"
-    }
-    
-    static func setImage(imageView:UIImageView, url:String?) {
-        
-        guard let urlStr = url else {
-            imageView.image = UIImage(named: "warning")
-            return
-        }
-        
-        let url = URL(string: urlStr)
-        let imagePlaceHolder = UIImage(named: "picture")
-        
-        imageView.sd_setImage(with: url
-            , placeholderImage: imagePlaceHolder
-        , options: SDWebImageOptions.cacheMemoryOnly) { (image, error, cacheType, url) in
-            if error != nil {
-                imageView.image = UIImage(named: "warning")
-            }
-        }
-    }
+    }        
     
     static func uniqueFilename(prefix: String? = nil) -> String {
-        let uniqueString = ProcessInfo.processInfo.globallyUniqueString
-        
+        let uniqueString = "\(NSDate().timeIntervalSince1970)"
         if prefix != nil {
             return "\(prefix!)-\(uniqueString)"
         }
         
         return uniqueString
     }
+    
+    static func thumbnailForVideoAtURL(url: URL) -> UIImage? {
+        
+        let asset = AVURLAsset(url: url, options: nil)
+        let imgGenerator = AVAssetImageGenerator(asset: asset)
+        do {
+            let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(0, 1), actualTime: nil)
+            return UIImage(cgImage: cgImage)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return nil
+    }
+    
+    static func getFileURL(fileName:String) -> URL {
+        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+        return path.appendingPathComponent(fileName)
+    }
+    
 }

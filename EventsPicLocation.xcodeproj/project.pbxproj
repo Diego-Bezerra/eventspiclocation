@@ -28,6 +28,10 @@
 		A8C059271F212757003781D7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C059251F212757003781D7 /* MainViewController.xib */; };
 		A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */; };
 		AC4788C2A487A88B4646CDDD /* Pods_EventsPicLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1DF9348693FAC5DE3E3C5 /* Pods_EventsPicLocation.framework */; };
+		E202E3F72003C74C00B70C6D /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202E3F52003C74C00B70C6D /* Media+CoreDataClass.swift */; };
+		E202E3F82003C74C00B70C6D /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202E3F62003C74C00B70C6D /* Media+CoreDataProperties.swift */; };
+		E202E3FB2003F32500B70C6D /* FileMediaInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202E3F92003F32500B70C6D /* FileMediaInfo+CoreDataClass.swift */; };
+		E202E3FC2003F32500B70C6D /* FileMediaInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202E3FA2003F32500B70C6D /* FileMediaInfo+CoreDataProperties.swift */; };
 		E21D44B31FF3CE0D00FCFBF1 /* MediaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */; };
 		E21D44B61FF3D0FD00FCFBF1 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */; };
 		E21D44B71FF3D0FD00FCFBF1 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */; };
@@ -51,8 +55,6 @@
 		E2A4A8951F8E88DB0009F603 /* Subject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88D1F8E88DB0009F603 /* Subject+CoreDataProperties.swift */; };
 		E2A4A8961F8E88DB0009F603 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88E1F8E88DB0009F603 /* User+CoreDataClass.swift */; };
 		E2A4A8971F8E88DB0009F603 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A88F1F8E88DB0009F603 /* User+CoreDataProperties.swift */; };
-		E2A4A8981F8E88DB0009F603 /* Media+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8901F8E88DB0009F603 /* Media+CoreDataClass.swift */; };
-		E2A4A8991F8E88DB0009F603 /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8911F8E88DB0009F603 /* Media+CoreDataProperties.swift */; };
 		E2A4A89C1F8E89590009F603 /* LotteryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A89B1F8E89590009F603 /* LotteryService.swift */; };
 		E2A4A8A01F8E89B20009F603 /* ServiceApiUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A89F1F8E89B20009F603 /* ServiceApiUtil.swift */; };
 		E2A4A8A21F8E8DF40009F603 /* LotterryVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4A8A11F8E8DF40009F603 /* LotterryVO.swift */; };
@@ -90,6 +92,10 @@
 		A8C059251F212757003781D7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ViewControllers/MainViewController.xib; sourceTree = "<group>"; };
 		A8E768CE1F3A58CF00C5634E /* EPLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPLBaseViewController.swift; path = Common/EPLBaseViewController.swift; sourceTree = "<group>"; };
 		DA85193ABA5D7FB28942AC56 /* Pods-EventsPicLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsPicLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation.release.xcconfig"; sourceTree = "<group>"; };
+		E202E3F52003C74C00B70C6D /* Media+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Media+CoreDataClass.swift"; path = "Model/Media+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E202E3F62003C74C00B70C6D /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Media+CoreDataProperties.swift"; path = "Model/Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E202E3F92003F32500B70C6D /* FileMediaInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FileMediaInfo+CoreDataClass.swift"; path = "Model/FileMediaInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E202E3FA2003F32500B70C6D /* FileMediaInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FileMediaInfo+CoreDataProperties.swift"; path = "Model/FileMediaInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaMainViewController.swift; path = ViewControllers/MediaMainViewController.swift; sourceTree = "<group>"; };
 		E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ViewControllers/GalleryViewController.swift; sourceTree = "<group>"; };
 		E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GalleryViewController.xib; path = ViewControllers/GalleryViewController.xib; sourceTree = "<group>"; };
@@ -115,8 +121,6 @@
 		E2A4A88D1F8E88DB0009F603 /* Subject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2A4A88E1F8E88DB0009F603 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E2A4A88F1F8E88DB0009F603 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E2A4A8901F8E88DB0009F603 /* Media+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E2A4A8911F8E88DB0009F603 /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2A4A89B1F8E89590009F603 /* LotteryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryService.swift; sourceTree = "<group>"; };
 		E2A4A89F1F8E89B20009F603 /* ServiceApiUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApiUtil.swift; sourceTree = "<group>"; };
 		E2A4A8A11F8E8DF40009F603 /* LotterryVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LotterryVO.swift; path = ServiceApi/LotterryVO.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 			children = (
 				A8482BA21F770712001D8107 /* User */,
 				A8AE6D301F7703A200D86431 /* Media */,
+				E272FF3E2003ACE20093388B /* FileMediaInfo */,
 				A8AE6D2F1F77039000D86431 /* Lottery */,
 				A8AE6D2E1F77037400D86431 /* Subject */,
 			);
@@ -280,8 +285,8 @@
 		A8AE6D301F7703A200D86431 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				E2A4A8901F8E88DB0009F603 /* Media+CoreDataClass.swift */,
-				E2A4A8911F8E88DB0009F603 /* Media+CoreDataProperties.swift */,
+				E202E3F52003C74C00B70C6D /* Media+CoreDataClass.swift */,
+				E202E3F62003C74C00B70C6D /* Media+CoreDataProperties.swift */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -374,6 +379,15 @@
 				E272FF2E1FFE61F60093388B /* UIDownPicker.m */,
 			);
 			name = DownPicker;
+			sourceTree = "<group>";
+		};
+		E272FF3E2003ACE20093388B /* FileMediaInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E202E3F92003F32500B70C6D /* FileMediaInfo+CoreDataClass.swift */,
+				E202E3FA2003F32500B70C6D /* FileMediaInfo+CoreDataProperties.swift */,
+			);
+			name = FileMediaInfo;
 			sourceTree = "<group>";
 		};
 		E27465F81FA26B31002BD372 /* Media */ = {
@@ -603,9 +617,11 @@
 				E21D44B61FF3D0FD00FCFBF1 /* GalleryViewController.swift in Sources */,
 				E27465F71FA269E9002BD372 /* MediaRequestVO.swift in Sources */,
 				E2A4A8941F8E88DB0009F603 /* Subject+CoreDataClass.swift in Sources */,
+				E202E3F82003C74C00B70C6D /* Media+CoreDataProperties.swift in Sources */,
 				E2A4A8A21F8E8DF40009F603 /* LotterryVO.swift in Sources */,
 				E272FF2B1FFD59430093388B /* PhotoViewController.swift in Sources */,
 				A8AE6CD51F76FD0200D86431 /* EventsPicLocation.xcdatamodeld in Sources */,
+				E202E3F72003C74C00B70C6D /* Media+CoreDataClass.swift in Sources */,
 				E21D44B31FF3CE0D00FCFBF1 /* MediaMainViewController.swift in Sources */,
 				A88F3E651F1BF1EC00AE6ACC /* EPLUserPreferencesHelper.swift in Sources */,
 				E2A4A8931F8E88DB0009F603 /* Lottery+CoreDataProperties.swift in Sources */,
@@ -615,21 +631,21 @@
 				E27465FA1FA26B47002BD372 /* MediaVO.swift in Sources */,
 				E2A4A8A01F8E89B20009F603 /* ServiceApiUtil.swift in Sources */,
 				A88F3E611F1BF19000AE6ACC /* LoginViewController.swift in Sources */,
-				E2A4A8991F8E88DB0009F603 /* Media+CoreDataProperties.swift in Sources */,
 				E2A4A8951F8E88DB0009F603 /* Subject+CoreDataProperties.swift in Sources */,
 				A8C0591C1F1CD42A003781D7 /* EPLLabel.swift in Sources */,
 				A8C059201F1E2310003781D7 /* EPLCameraHelper.swift in Sources */,
 				A88F3E691F1BF3D100AE6ACC /* EPLHelper.swift in Sources */,
 				A8AE6CD01F76F58300D86431 /* MediaViewController.swift in Sources */,
+				E202E3FC2003F32500B70C6D /* FileMediaInfo+CoreDataProperties.swift in Sources */,
 				E2A4A89C1F8E89590009F603 /* LotteryService.swift in Sources */,
 				A8E768CF1F3A58CF00C5634E /* EPLBaseViewController.swift in Sources */,
 				A88F3E4D1F1BF13100AE6ACC /* AppDelegate.swift in Sources */,
 				E2A4A87B1F8D426E0009F603 /* MapViewController.swift in Sources */,
+				E202E3FB2003F32500B70C6D /* FileMediaInfo+CoreDataClass.swift in Sources */,
 				E2E7A2641FA8C77000E43969 /* RecoverPasswordViewController.swift in Sources */,
 				A88F3E671F1BF33000AE6ACC /* EPLTextField.swift in Sources */,
 				E2A4A8961F8E88DB0009F603 /* User+CoreDataClass.swift in Sources */,
 				A88F3E7C1F1C036B00AE6ACC /* EPLButton.swift in Sources */,
-				E2A4A8981F8E88DB0009F603 /* Media+CoreDataClass.swift in Sources */,
 				E272FF331FFE61F70093388B /* DownPicker.m in Sources */,
 				E2A4A8801F8D484B0009F603 /* SettingsViewController.swift in Sources */,
 				E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */,

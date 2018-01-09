@@ -13,9 +13,10 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var noImagesTxt: EPLLabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //var mediasList:Array<Media>!
-    var mediaList:Array<String>!
+    var mediaList:Array<FileMediaInfo>!
     let cellIdentfier = "mediaCell"
+    var lotteryId:Int64?
+    var subjectId:Int64?
     fileprivate let itemsPerRow: CGFloat = 3
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
@@ -27,35 +28,52 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func setupCollectionView() {
-        //mediasList = Array<Media>()
         collectionView.dataSource = self
         collectionView.delegate = self
         let nibCell = UINib(nibName: "MediaCollectionViewCell", bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: cellIdentfier)
         
-        mediaList = Array<String>()
+        mediaList = Array<FileMediaInfo>()
         if mediaList.count == 0 {
             collectionView.isHidden = true
             noImagesTxt.isHidden = false
         }
-//        mediaList.append("https://cdn.vox-cdn.com/uploads/chorus_asset/file/9224559/3DS_MetroidSamusReturns_char_01.jpg")
-//        mediaList.append("http://vignette4.wikia.nocookie.net/metroid/images/b/ba/Metroid.jpg/revision/latest/scale-to-width-down/2000?cb=20150702055904")
-//        mediaList.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUP1mooxxuItuHz2f-yvTH-YA3CGbeVo8wmboDatT9D1DEFZUW")
-//        mediaList.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tlDoeqGjDxGLIf_96AeKQhUjSc5hCh_wuqF2EU8JwS9q_We1")
-//        mediaList.append("https://vignette.wikia.nocookie.net/metroid/images/1/1d/Metroid_Est%C3%A1ndar_en_Super_Metroid.png/revision/latest?cb=20110409195642&path-prefix=es")
-//        mediaList.append("https://res.cloudinary.com/teepublic/image/private/s--e2-gYAJd--/t_Preview/b_rgb:191919,c_limit,f_auto,h_313,q_90,w_313/v1499099272/production/designs/1710662_1")
-//        mediaList.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQALctmFKuUEDO9kDnfEXOtOcGK9aPBXkEEzmrtoIwsWahGz7I")
-//        mediaList.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGRpYGt0hguTY7Ru-7c_9KVAwk48OCd8d_t5KkuCi6iTBqcZ5v")
-//        mediaList.append("https://vignette.wikia.nocookie.net/metroid/images/0/06/Super_Metroid_title.png/revision/latest?cb=20120817181754")
-//        mediaList.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGcVz8TIUqFkCuh1kcLZCa5T1vTaeMkKPlgSdGuKafniUkKR")
-//        mediaList.append("https://gamersplash.files.wordpress.com/2017/05/switch-metroid-1.jpg?w=1200")
     }
     
-    public func addImageToGallery(path:String) {
-        collectionView.isHidden = false
-        noImagesTxt.isHidden = true
-        mediaList.append(path)
+    func getFilesList(lotId:Int64?, subId:Int64?) {
+        
+        guard let mLotId = lotId, let mSubId = subId else {
+            collectionView.isHidden = true
+            noImagesTxt.isHidden = false
+            return
+        }
+        
+        mediaList = Array<FileMediaInfo>()
+        
+        let list = Media.query(["lottery" : mLotId, "subject" : mSubId]
+            , sort: [["date" : "DESC"]]) as! [Media]
+        for media in list {
+            if let f = media.file {
+                mediaList.append(f)
+            }
+        }
+        
+        collectionView.isHidden = mediaList.isEmpty
+        noImagesTxt.isHidden = !mediaList.isEmpty
         collectionView.reloadData()
+    }
+    
+    func setLotteryId(lotId:Int64?, andSubjectId subId:Int64?) {
+        lotteryId = lotId
+        subjectId = subId
+        getFilesList(lotId: lotId, subId: subId)
+    }
+    
+    public func reload() {
+        guard let lotId = lotteryId, let subId = subjectId else {
+            return
+        }
+        setLotteryId(lotId: lotId, andSubjectId: subId)
     }
     
     //MARK: UICollectionViewDataSource
@@ -71,8 +89,8 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let cell:MediaCollectionViewCell! = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentfier, for: indexPath) as? MediaCollectionViewCell
         
-        let mediaStr = mediaList[indexPath.row]
-        cell.setImage(urlStr: mediaStr)
+        let file = mediaList[indexPath.row]
+        cell.setImage(file: file)
         
         return cell
     }
@@ -99,8 +117,9 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     
      //MARK: UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let url = mediaList[indexPath.row]
-        let viewController = PhotoViewController(imageUrlStr: url)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if let fileName = mediaList[indexPath.row].name {
+            let viewController = PhotoViewController(fileName: fileName)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }

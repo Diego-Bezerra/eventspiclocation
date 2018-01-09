@@ -35,8 +35,8 @@ class EPLLocationHelper: NSObject, CLLocationManagerDelegate {
         self.currentLocation = locations[0] as CLLocation
         //manager.stopUpdatingLocation()
         
-        print("user latitude = \(self.currentLocation?.coordinate.latitude)")
-        print("user longitude = \(self.currentLocation?.coordinate.longitude)")
+        //print("user latitude = \(self.currentLocation?.coordinate.latitude)")
+        //print("user longitude = \(self.currentLocation?.coordinate.longitude)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
