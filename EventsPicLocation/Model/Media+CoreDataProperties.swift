@@ -26,5 +26,6 @@ extension Media {
     @NSManaged public var subject: Int64
     @NSManaged public var file: FileMediaInfo?
     @NSManaged public var user: User?
+    @NSManaged public var sync: Bool
 
 }

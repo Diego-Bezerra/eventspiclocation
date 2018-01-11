@@ -35,6 +35,7 @@
 		E21D44B31FF3CE0D00FCFBF1 /* MediaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */; };
 		E21D44B61FF3D0FD00FCFBF1 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */; };
 		E21D44B71FF3D0FD00FCFBF1 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */; };
+		E241B668200653C00009513B /* SyncCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241B667200653C00009513B /* SyncCenter.swift */; };
 		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
 		E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */; };
 		E272FF251FFCFAE40093388B /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */; };
@@ -99,6 +100,7 @@
 		E21D44B21FF3CE0D00FCFBF1 /* MediaMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaMainViewController.swift; path = ViewControllers/MediaMainViewController.swift; sourceTree = "<group>"; };
 		E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ViewControllers/GalleryViewController.swift; sourceTree = "<group>"; };
 		E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GalleryViewController.xib; path = ViewControllers/GalleryViewController.xib; sourceTree = "<group>"; };
+		E241B667200653C00009513B /* SyncCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncCenter.swift; path = ServiceApi/SyncCenter.swift; sourceTree = "<group>"; };
 		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaCollectionViewCell.swift; path = ViewControllers/MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MediaCollectionViewCell.xib; path = ViewControllers/MediaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		A8AE6CD21F76FB2300D86431 /* ServiceApi */ = {
 			isa = PBXGroup;
 			children = (
+				E241B6662006539D0009513B /* SyncCenter */,
 				E27465F81FA26B31002BD372 /* Media */,
 				E2A4A8A81F8E96540009F603 /* Subject */,
 				E2A4A8A51F8E955C0009F603 /* ApiService */,
@@ -340,6 +343,14 @@
 				A8C059251F212757003781D7 /* MainViewController.xib */,
 			);
 			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		E241B6662006539D0009513B /* SyncCenter */ = {
+			isa = PBXGroup;
+			children = (
+				E241B667200653C00009513B /* SyncCenter.swift */,
+			);
+			name = SyncCenter;
 			sourceTree = "<group>";
 		};
 		E272FF261FFD58CE0093388B /* GalleryViewController */ = {
@@ -651,6 +662,7 @@
 				E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */,
 				E2A4A8971F8E88DB0009F603 /* User+CoreDataProperties.swift in Sources */,
 				E2A4A8921F8E88DB0009F603 /* Lottery+CoreDataClass.swift in Sources */,
+				E241B668200653C00009513B /* SyncCenter.swift in Sources */,
 				A88F3E751F1BFC4F00AE6ACC /* CameraViewController.swift in Sources */,
 				A8C059261F212757003781D7 /* MainViewController.swift in Sources */,
 			);

@@ -17,8 +17,7 @@ extension FileMediaInfo {
         return NSFetchRequest<FileMediaInfo>(entityName: "FileMediaInfo")
     }
     
-    @NSManaged public var mimeType: String?    
-    @NSManaged public var sync: Bool
+    @NSManaged public var mimeType: String?        
     @NSManaged public var name: String?
     @NSManaged public var creationDate: Date?
     @NSManaged public var syncDate: Date?

@@ -4,7 +4,6 @@
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sync" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="syncDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="Lottery" representedClassName="Lottery" syncable="YES">
@@ -19,6 +18,7 @@
         <attribute name="lottery" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sync" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="file" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileMediaInfo" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
@@ -35,9 +35,9 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FileMediaInfo" positionX="-45" positionY="81" width="128" height="120"/>
+        <element name="FileMediaInfo" positionX="-45" positionY="81" width="128" height="105"/>
         <element name="Lottery" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Media" positionX="-36" positionY="27" width="128" height="180"/>
+        <element name="Media" positionX="-36" positionY="27" width="128" height="195"/>
         <element name="Subject" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="User" positionX="-45" positionY="63" width="128" height="135"/>
     </elements>

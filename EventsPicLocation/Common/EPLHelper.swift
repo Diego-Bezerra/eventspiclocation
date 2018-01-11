@@ -27,30 +27,33 @@ class EPLHelper {
     
     static func showHud(withView view:UIView, message:String, andOffSetPoint point:CGPoint?) {
         
-        let hudDelay = TimeInterval(3)
+        DispatchQueue.main.async {
         
-        let hud = MBProgressHUD.showAdded(to: view, animated: true)
-        hud.mode = MBProgressHUDMode.text
-        hud.isUserInteractionEnabled = false
-        hud.label.text = message
-        if let newOffset = point {
-            hud.offset = newOffset
+            let hudDelay = TimeInterval(3)
+            
+            let hud = MBProgressHUD.showAdded(to: view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.isUserInteractionEnabled = false
+            hud.label.text = message
+            if let newOffset = point {
+                hud.offset = newOffset
+            }
+            hud.removeFromSuperViewOnHide = true
+            hud.hide(animated: true, afterDelay: hudDelay)
         }
-        hud.removeFromSuperViewOnHide = true
-        hud.hide(animated: true, afterDelay: hudDelay)
     }
     
+    static var progress:MBProgressHUD?
+    
     static func showProgress(withView view:UIView) {
-        //DispatchQueue.main.async {
-            MBProgressHUD.showAdded(to:view , animated: true)
-        //}
+        if progress != nil {
+            progress?.hide(animated: true)
+        }
+        progress = MBProgressHUD.showAdded(to:view , animated: true)
     }
     
     static func hideProgress(withView view:UIView) {
-       //DispatchQueue.main.async {
-            MBProgressHUD.hide(for: view, animated: true)
-        
-        //}
+        progress?.hide(animated: true)
     }
     
     static func showAlert(message:String, viewController:UIViewController, completion: @escaping (UIAlertAction) -> Void) {

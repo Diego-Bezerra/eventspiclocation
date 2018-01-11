@@ -17,6 +17,7 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SyncCenter.syncFilePhotos()
         setupTabBar()
     }
 

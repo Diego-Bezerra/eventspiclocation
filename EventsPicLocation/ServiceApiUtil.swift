@@ -15,8 +15,8 @@ class ServiceApiUtil {
     static let LIST_SUBJECT = "/assunto/listar"
     static let LOGIN = "/login"
     static let SAVE_MEDIA = "/midia/salvar"
-    static let GET_FILE = "midia/arquivo/14"
-    static let POST_FILE = "midia/arquivo/14"
+    static let GET_FILE = "/midia/arquivo/"
+    static let SAVE_FILE = "/midia/arquivo/"
     static let CHANGE_PASSWORD = "/usuario/alterarSenha"
     static let RECOVER_PASSWORD = "/usuario/recuperarSenha"
     
