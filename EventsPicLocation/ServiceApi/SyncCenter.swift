@@ -23,21 +23,27 @@ class SyncCenter {
             let media = filesToSync[i]
             let file = media.file!
             let url = EPLHelper.getFileURL(fileName: file.name!)
-            if let img = try! UIImage(data: Data(contentsOf: url)) {
-                if let imgData = UIImageJPEGRepresentation(img, 0.2) {
-                
-                    ApiService.saveFile(mediaId: media.id, imageData: imgData, completion: { (isSuccess) in
-                        if isSuccess {
-                            media.sync = true
-                            media.save()
-                        }
-                        
-                        i += 1
-                        if i < filesToSync.count {
-                            SyncCenter.syncFilePhotos(index: i, filesToSync: filesToSync)
-                        }
-                    })
+            
+            do {
+                let image = try UIImage(data: Data(contentsOf: url))
+                if let img = image {
+                    if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+                    
+                        ApiService.saveFile(mediaId: media.id, imageData: imgData, completion: { (isSuccess) in
+                            if isSuccess {
+                                media.sync = true
+                                media.save()
+                            }
+                            
+                            i += 1
+                            if i < filesToSync.count {
+                                SyncCenter.syncFilePhotos(index: i, filesToSync: filesToSync)
+                            }
+                        })
+                    }
                 }
+            } catch {
+                print(error.localizedDescription)
             }
         }
         

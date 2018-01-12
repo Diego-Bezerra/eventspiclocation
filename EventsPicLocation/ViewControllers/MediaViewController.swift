@@ -177,12 +177,13 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     
     func saveImageFile(image:UIImage, fileName:String) {
         
-        let newPath = EPLHelper.getFileURL(fileName: fileName)
-        let jpgImageData = UIImageJPEGRepresentation(image, 1.0)
-        do {
-            try jpgImageData!.write(to: newPath)
-        } catch {
-            print(error)
+        if let img = resizeImage(image:image) {
+            let newPath = EPLHelper.getFileURL(fileName: fileName)
+            do {
+                try img.write(to: newPath)
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -195,6 +196,50 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         } catch {
             print(error)
         }
+    }
+    
+    func resizeImage(image: UIImage) -> Data? {
+        
+        var actualHeight : CGFloat = image.size.height
+        var actualWidth : CGFloat = image.size.width
+        let maxHeight : CGFloat = 1136.0
+        let maxWidth : CGFloat = 640.0
+        var imgRatio : CGFloat = actualWidth/actualHeight
+        let maxRatio : CGFloat = maxWidth/maxHeight
+        var compressionQuality : CGFloat = 0.5
+        
+        if (actualHeight > maxHeight || actualWidth > maxWidth){
+            if(imgRatio < maxRatio){
+                //adjust width according to maxHeight
+                imgRatio = maxHeight / actualHeight
+                actualWidth = imgRatio * actualWidth
+                actualHeight = maxHeight
+            }
+            else if(imgRatio > maxRatio){
+                //adjust height according to maxWidth
+                imgRatio = maxWidth / actualWidth
+                actualHeight = imgRatio * actualHeight
+                actualWidth = maxWidth
+            }
+            else{
+                actualHeight = maxHeight
+                actualWidth = maxWidth
+                compressionQuality = 1
+            }
+        }
+        
+        let rect = CGRect(x: 0.0, y: 0.0, width: actualWidth, height: actualHeight)
+        UIGraphicsBeginImageContext(rect.size)
+        image.draw(in: rect)
+        guard let img = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        UIGraphicsEndImageContext()
+        guard let imageData = UIImageJPEGRepresentation(img, compressionQuality)else{
+            return nil
+        }
+        return imageData
+        
     }
     
     func createNewMedia(fileName:String, fileMimeType:FileMediaInfo.FileMimeType, completion: @escaping (Bool) -> Void)  {
@@ -282,3 +327,4 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         }
     }
 }
+
