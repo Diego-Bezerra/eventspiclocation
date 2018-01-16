@@ -21,17 +21,48 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="McQ-Ev-aS3">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                     </imageView>
+                    <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-XO-RSv">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked" translatesAutoresizingMaskIntoConstraints="NO" id="1Mj-cn-atu">
+                                <rect key="frame" x="60" y="0.0" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="8Yg-lx-ReU"/>
+                                    <constraint firstAttribute="height" constant="20" id="Fm0-ws-evq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Mj-cn-atu" firstAttribute="top" secondItem="qHp-XO-RSv" secondAttribute="top" id="T18-bx-HQG"/>
+                            <constraint firstAttribute="trailing" secondItem="1Mj-cn-atu" secondAttribute="trailing" id="UQ3-Q8-Mq9"/>
+                        </constraints>
+                    </view>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="o6E-K8-kCK">
+                        <rect key="frame" x="30" y="30" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="qHp-XO-RSv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BLd-Jx-5pS"/>
+                <constraint firstAttribute="bottom" secondItem="qHp-XO-RSv" secondAttribute="bottom" id="F0l-hm-ELZ"/>
                 <constraint firstAttribute="bottom" secondItem="McQ-Ev-aS3" secondAttribute="bottom" id="FDv-fC-o6a"/>
                 <constraint firstAttribute="trailing" secondItem="McQ-Ev-aS3" secondAttribute="trailing" id="NvC-gB-flM"/>
                 <constraint firstItem="McQ-Ev-aS3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iCL-zj-n35"/>
+                <constraint firstItem="qHp-XO-RSv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="naP-zY-WzS"/>
                 <constraint firstItem="McQ-Ev-aS3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pVJ-kB-GnB"/>
+                <constraint firstAttribute="trailing" secondItem="qHp-XO-RSv" secondAttribute="trailing" id="qRw-q8-Lfz"/>
             </constraints>
             <connections>
+                <outlet property="activityIndicator" destination="o6E-K8-kCK" id="KHu-0m-YKs"/>
+                <outlet property="alphaLayerView" destination="qHp-XO-RSv" id="qdc-Fi-vQF"/>
+                <outlet property="checkedImg" destination="1Mj-cn-atu" id="iuF-5N-2nE"/>
                 <outlet property="mediaImage" destination="McQ-Ev-aS3" id="7ws-Qh-wjG"/>
             </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="checked" width="48" height="48"/>
+    </resources>
 </document>

@@ -14,13 +14,18 @@ class MainViewController: UITabBarController {
     var mapViewController:UINavigationController!
     var mediaViewController:UINavigationController!
     var settingsViewController:UINavigationController!
+    static let contextChangedNotification = "contextChangedNotification"
+    static let lotteryParamKey = "lotKey"
+    static let subjectParamKey = "subKey"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         SyncCenter.syncFilePhotos()
         setupTabBar()
+        //call view to force viewDidLoad to be called
+        _ = self.settingsViewController.view
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -40,7 +45,7 @@ class MainViewController: UITabBarController {
         self.mediaViewController = setupTabViewController(viewController: MediaViewController(), title: "MEDIA", image: "photo")
         self.settingsViewController = setupTabViewController(viewController: SettingsViewController(), title: "SETTINGS", image: "settings")
         
-        self.viewControllers = [mapViewController, mediaViewController, settingsViewController]
+        self.viewControllers = [mediaViewController, mapViewController, settingsViewController]
         self.selectedIndex = 0
     }
     

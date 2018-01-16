@@ -83,7 +83,8 @@ class LoginViewController: EPLBaseViewController, UITextFieldDelegate {
     
     @IBAction func forgotLoginPasswordAction(_ sender: Any) {
         let recoverViewController = RecoverPasswordViewController(nibName: "RecoverPasswordViewController", bundle: nil)
-        self.present(recoverViewController, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: recoverViewController)
+        self.present(nav, animated: true, completion: nil)
     }
     
     @IBAction func enterAction(_ sender: Any) {

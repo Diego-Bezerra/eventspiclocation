@@ -31,9 +31,8 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NO_IMAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pm3-8q-oyI" customClass="EPLLabel" customModule="EventsPicLocation" customModuleProvider="target">
-                    <rect key="frame" x="16" y="323" width="343" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO_IMAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pm3-8q-oyI" customClass="EPLLabel" customModule="EventsPicLocation" customModuleProvider="target">
+                    <rect key="frame" x="146" y="323" width="83" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -41,6 +40,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="pm3-8q-oyI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="286-kb-Vhx"/>
+                <constraint firstItem="pm3-8q-oyI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UF5-4B-GLW"/>
                 <constraint firstAttribute="trailing" secondItem="fVd-H8-UOx" secondAttribute="trailing" id="b24-Tz-eKX"/>
                 <constraint firstItem="fVd-H8-UOx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mW6-tF-1v8"/>
                 <constraint firstAttribute="bottom" secondItem="fVd-H8-UOx" secondAttribute="bottom" id="mZF-lF-5YY"/>

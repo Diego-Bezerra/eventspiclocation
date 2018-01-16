@@ -2,7 +2,7 @@
 //  MediaMainViewController.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 27/12/17.
+//  Created by Diego on 27/12/17.
 //  Copyright © 2017 Pernambuco da Sorte. All rights reserved.
 //
 

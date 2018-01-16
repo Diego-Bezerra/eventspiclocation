@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -101,7 +101,7 @@
                     <rect key="frame" x="142" y="174" width="90" height="90"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C46-Ez-469" customClass="EPLButton" customModule="EventsPicLocation" customModuleProvider="target">
-                    <rect key="frame" x="90" y="617" width="195" height="30"/>
+                    <rect key="frame" x="16" y="617" width="343" height="30"/>
                     <state key="normal" title="FORGOT_LOGIN_PASSWORD"/>
                     <connections>
                         <action selector="forgotLoginPasswordAction:" destination="-1" eventType="touchUpInside" id="enB-M0-58G"/>
@@ -111,12 +111,12 @@
             <color key="backgroundColor" red="0.96327158082856867" green="0.97280892321300994" blue="0.97280892321300994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="CVJ-Zd-rSd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7Ij-mf-oec"/>
-                <constraint firstAttribute="trailing" secondItem="C46-Ez-469" secondAttribute="trailing" constant="90" id="EFJ-3l-hFY"/>
+                <constraint firstAttribute="trailing" secondItem="C46-Ez-469" secondAttribute="trailing" constant="16" id="EFJ-3l-hFY"/>
                 <constraint firstItem="CVJ-Zd-rSd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LAq-G0-OVH"/>
                 <constraint firstItem="OLg-U8-d8E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M31-bg-Iox"/>
                 <constraint firstItem="CVJ-Zd-rSd" firstAttribute="top" secondItem="OLg-U8-d8E" secondAttribute="bottom" constant="8.5" id="Osn-Ro-YfP"/>
                 <constraint firstAttribute="bottom" secondItem="C46-Ez-469" secondAttribute="bottom" constant="20" id="Qbj-UO-ch2"/>
-                <constraint firstItem="C46-Ez-469" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="90" id="VNL-fM-Lbv"/>
+                <constraint firstItem="C46-Ez-469" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="VNL-fM-Lbv"/>
                 <constraint firstAttribute="trailing" secondItem="OLg-U8-d8E" secondAttribute="trailing" constant="143" id="oPK-l4-hj6"/>
                 <constraint firstItem="OLg-U8-d8E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="142" id="pC9-Vm-aPG"/>
             </constraints>

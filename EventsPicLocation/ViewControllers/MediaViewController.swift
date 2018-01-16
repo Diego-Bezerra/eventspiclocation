@@ -129,12 +129,12 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     
     func setupImagePicker() {
         self.imagePicker = UIImagePickerController()
-        self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-        self.imagePicker.showsCameraControls = true
-        self.imagePicker.delegate = self
-        if let mediaTypes = UIImagePickerController.availableMediaTypes(for: self.imagePicker.sourceType) {
-            self.imagePicker.mediaTypes = mediaTypes
-        }
+//        self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+//        self.imagePicker.showsCameraControls = true
+//        self.imagePicker.delegate = self
+//        if let mediaTypes = UIImagePickerController.availableMediaTypes(for: self.imagePicker.sourceType) {
+//            self.imagePicker.mediaTypes = mediaTypes
+//        }
     }
     
     func setupDownPicker(textField:UITextField, placeHolder:String, list:Array<String>, target:Selector) -> DownPicker! {
@@ -149,14 +149,31 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         return downPicker
     }
 
+    func postContextChangedNotification() {
+        
+        var userInfo = [AnyHashable : Any]()
+        if let sub = selectedSubject {
+            userInfo[MainViewController.subjectParamKey] = sub
+        }
+        if let lot = selectedLottery {
+            userInfo[MainViewController.lotteryParamKey] = lot
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(MainViewController.contextChangedNotification)
+            , object: nil
+            , userInfo: userInfo)
+    }
+    
     func dpLotterySelected() {
         self.selectedLottery = lotterySubjectListsVO?.lotteries?[lotteryDowPicker.selectedIndex]
         reloadGallery()
+        postContextChangedNotification()
     }
     
     func dpSubjectSelected() {
         self.selectedSubject = lotterySubjectListsVO?.subjects?[subjectDowPicker.selectedIndex]
         reloadGallery()
+        postContextChangedNotification()
     }
     
     func reloadGallery() {
@@ -269,12 +286,16 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
             newMedia.idAssunto = lot.id
             newMedia.idSorteio = sub.id
             
-            ApiService.saveMedia(media: newMedia, fileName: fileName, completion: { [unowned self] (isSuccess) in
+            ApiService.saveMedia(media: newMedia, fileName: fileName, completion: { [unowned self] (isSuccess, media) in
+                
                 if !isSuccess {
                     EPLHelper.showHud(withView: self.view, andLocalizedMessage: "SAVE_MEDIA_PROBLEM")
                     completion(false)
                 } else {
                     completion(true)
+                    if let m = media {
+                        SyncCenter.syncFilePhoto(media: m)
+                    }
                     self.galleryViewController.reload()
                 }
                 EPLHelper.hideProgress(withView: self.view)

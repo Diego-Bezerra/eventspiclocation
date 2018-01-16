@@ -2,7 +2,7 @@
 //  SettingsViewController.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 10/10/17.
+//  Created by Diego on 10/10/17.
 //  Copyright © 2017 Pernambuco da Sorte. All rights reserved.
 //
 
@@ -37,6 +37,7 @@ class SettingsViewController: EPLBaseViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController?.dismiss(animated: true, completion: nil)
         appDelegate.window?.rootViewController = LoginViewController()
+        EPLUserPreferencesHelper.setKeepLogged(keepConnected: false)
     }
     
 }

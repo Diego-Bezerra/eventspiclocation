@@ -2,7 +2,7 @@
 //  MediaCollectionViewCell.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 03/01/18.
+//  Created by Diego on 03/01/18.
 //  Copyright © 2018 Pernambuco da Sorte. All rights reserved.
 //
 
@@ -12,6 +12,9 @@ import SDWebImage
 class MediaCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var mediaImage: UIImageView!
+    @IBOutlet weak var checkedImg: UIImageView!
+    @IBOutlet weak var alphaLayerView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

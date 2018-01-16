@@ -2,7 +2,7 @@
 //  GalleryViewController.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 27/12/17.
+//  Created by Diego on 27/12/17.
 //  Copyright © 2017 Pernambuco da Sorte. All rights reserved.
 //
 
@@ -34,10 +34,9 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         collectionView.register(nibCell, forCellWithReuseIdentifier: cellIdentfier)
         
         mediaList = Array<FileMediaInfo>()
-        if mediaList.count == 0 {
-            collectionView.isHidden = true
-            noImagesTxt.isHidden = false
-        }
+        collectionView.isHidden = mediaList.count == 0
+        noImagesTxt.isHidden = !(mediaList.count == 0)
+        
     }
     
     func getFilesList(lotId:Int64?, subId:Int64?) {
@@ -50,8 +49,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         
         mediaList = Array<FileMediaInfo>()
         
-        let list = Media.query(["lottery" : mLotId, "subject" : mSubId]
-            , sort: [["date" : "DESC"]]) as! [Media]
+        let list = MediaDAO.getMediaBy(lotteryId: mLotId, and: mSubId)
         for media in list {
             if let f = media.file {
                 mediaList.append(f)

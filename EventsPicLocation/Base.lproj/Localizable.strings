@@ -24,6 +24,7 @@
 "CHOOSE_EDITION" = "Escolha a edição";
 "OK" = "Ok";
 "CANCEL" = "Cancelar";
+"CLOSE" = "Fechar";
 "FORGOT_LOGIN_PASSWORD" = "Esqueceu login ou senha?";
 "CHANGE_PASSWORD" = "Quer alterar sua senha?";
 "EMAIL" = "Email";
@@ -39,7 +40,7 @@
 "GALLERY" = "Galeria";
 "ADD_NEW_IMAGE" = "Adicionar nova imagem";
 "ADD_FROM_GALLERY" = "Adicionar da galeria";
-"TAKE_PICTURE" = "Adicionar foto ou video";
+"TAKE_PICTURE" = "Adicionar foto";
 "CHOSSE_VALUES" = "Escolha a edição e o assunto antes de adicionar uma foto";
 "LOCATION_ERROR" = "Não foi possível obter sua localização.";
 "SAVE_MEDIA_PROBLEM" = "Houve um problema ao tentar salvar a mídia.";

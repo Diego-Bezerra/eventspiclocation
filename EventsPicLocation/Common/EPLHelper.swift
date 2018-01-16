@@ -10,6 +10,7 @@ import Foundation
 import MBProgressHUD
 import SDWebImage
 import AVFoundation
+import ReachabilitySwift
 
 class EPLHelper {
     
@@ -104,9 +105,20 @@ class EPLHelper {
         return nil
     }
     
+    static func getFileURLStr(fileName:String) -> String {
+        return getFileURL(fileName:fileName).absoluteString
+    }
+    
     static func getFileURL(fileName:String) -> URL {
         let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
         return path.appendingPathComponent(fileName)
     }
     
+    static func canUploadFiles() -> Bool {
+        if Reachability.init()?.currentReachabilityStatus == Reachability.NetworkStatus.reachableViaWiFi {
+            return true
+        } else {
+            return !EPLUserPreferencesHelper.isOnlyWifi()
+        }
+    }
 }

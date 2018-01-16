@@ -16,5 +16,6 @@ target 'EventsPicLocation' do
   pod 'ObjectMapper', '3.0.0'
   pod 'ISHPullUp', '1.0.5'
   pod 'SDWebImage', '4.1.0'
+  pod 'ReachabilitySwift', '3'
   
 end

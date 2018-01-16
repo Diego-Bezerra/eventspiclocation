@@ -2,7 +2,7 @@
 //  Media+CoreDataProperties.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 08/01/18.
+//  Created by Diego on 08/01/18.
 //  Copyright © 2018 Pernambuco da Sorte. All rights reserved.
 //
 //

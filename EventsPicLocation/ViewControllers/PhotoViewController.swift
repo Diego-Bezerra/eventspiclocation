@@ -2,7 +2,7 @@
 //  PhotoViewController.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 03/01/18.
+//  Created by Diego on 03/01/18.
 //  Copyright © 2018 Pernambuco da Sorte. All rights reserved.
 //
 

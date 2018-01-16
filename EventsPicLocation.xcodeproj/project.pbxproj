@@ -36,6 +36,7 @@
 		E21D44B61FF3D0FD00FCFBF1 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */; };
 		E21D44B71FF3D0FD00FCFBF1 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */; };
 		E241B668200653C00009513B /* SyncCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241B667200653C00009513B /* SyncCenter.swift */; };
+		E241B66D200DF0330009513B /* MediaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241B66C200DF0330009513B /* MediaDAO.swift */; };
 		E25566AC1F38DCC900D41755 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E25566AB1F38DCC900D41755 /* .gitignore */; };
 		E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */; };
 		E272FF251FFCFAE40093388B /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */; };
@@ -101,6 +102,7 @@
 		E21D44B41FF3D0FD00FCFBF1 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ViewControllers/GalleryViewController.swift; sourceTree = "<group>"; };
 		E21D44B51FF3D0FD00FCFBF1 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GalleryViewController.xib; path = ViewControllers/GalleryViewController.xib; sourceTree = "<group>"; };
 		E241B667200653C00009513B /* SyncCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncCenter.swift; path = ServiceApi/SyncCenter.swift; sourceTree = "<group>"; };
+		E241B66C200DF0330009513B /* MediaDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaDAO.swift; path = DAO/MediaDAO.swift; sourceTree = "<group>"; };
 		E25566AB1F38DCC900D41755 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E272FF221FFCFAE40093388B /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaCollectionViewCell.swift; path = ViewControllers/MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		E272FF231FFCFAE40093388B /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MediaCollectionViewCell.xib; path = ViewControllers/MediaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		A88F3E4B1F1BF13100AE6ACC /* EventsPicLocation */ = {
 			isa = PBXGroup;
 			children = (
+				E241B66B200DEFF20009513B /* DAO */,
 				A8AE6CD61F76FE8200D86431 /* Model */,
 				A8AE6CD21F76FB2300D86431 /* ServiceApi */,
 				E2A4A89F1F8E89B20009F603 /* ServiceApiUtil.swift */,
@@ -351,6 +354,14 @@
 				E241B667200653C00009513B /* SyncCenter.swift */,
 			);
 			name = SyncCenter;
+			sourceTree = "<group>";
+		};
+		E241B66B200DEFF20009513B /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				E241B66C200DF0330009513B /* MediaDAO.swift */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 		E272FF261FFD58CE0093388B /* GalleryViewController */ = {
@@ -595,6 +606,7 @@
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRecord/SwiftRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -607,6 +619,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -660,6 +673,7 @@
 				E272FF331FFE61F70093388B /* DownPicker.m in Sources */,
 				E2A4A8801F8D484B0009F603 /* SettingsViewController.swift in Sources */,
 				E272FF241FFCFAE40093388B /* MediaCollectionViewCell.swift in Sources */,
+				E241B66D200DF0330009513B /* MediaDAO.swift in Sources */,
 				E2A4A8971F8E88DB0009F603 /* User+CoreDataProperties.swift in Sources */,
 				E2A4A8921F8E88DB0009F603 /* Lottery+CoreDataClass.swift in Sources */,
 				E241B668200653C00009513B /* SyncCenter.swift in Sources */,

@@ -2,7 +2,7 @@
 //  RecoverPasswordViewController.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 31/10/17.
+//  Created by Diego on 31/10/17.
 //  Copyright © 2017 Pernambuco da Sorte. All rights reserved.
 //
 
@@ -15,8 +15,12 @@ class RecoverPasswordViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = EPLHelper.localized(string: "RECOVER_PASSWORD")
+        //self.title = EPLHelper.localized(string: "RECOVER_PASSWORD")
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: EPLHelper.localized(string: "CLOSE")
+            , style: UIBarButtonItemStyle.done
+            , target: self, action: #selector(dismissViewController))
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +52,10 @@ class RecoverPasswordViewController: UIViewController, UITextFieldDelegate {
             
             EPLHelper.hideProgress(withView: self.view)
         }
+    }
+    
+    func dismissViewController() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func recoverAction(_ sender: Any) {

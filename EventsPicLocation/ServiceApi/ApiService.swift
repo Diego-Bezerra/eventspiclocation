@@ -2,7 +2,7 @@
 //  ApiService.swift
 //  EventsPicLocation
 //
-//  Created by Cittati Tecnologia on 11/10/17.
+//  Created by Diego on 11/10/17.
 //  Copyright © 2017 Pernambuco da Sorte. All rights reserved.
 //
 
@@ -31,18 +31,18 @@ class ApiService {
         }        
     }
     
-    static func saveMedia(media:MediaRequestVO, fileName:String, completion: @escaping (Bool) -> Void) {
+    static func saveMedia(media:MediaRequestVO, fileName:String, completion: @escaping (Bool, Media?) -> Void) {
         let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.SAVE_MEDIA)!
         doRequest(url: url, parameters:media.toJSON(), method: HTTPMethod.post) { (r) in
             if let val = r.result.value as? Dictionary<String, Any>, r.error == nil {
                 if let apiId = val["id"] as? Int64 {
-                    saveMediaCore(mediaId: apiId, fileName: fileName, withRequest: media)
-                    completion(true)
+                    let media = MediaDAO.saveMediaCore(mediaId: apiId, fileName: fileName, withRequest: media)
+                    completion(true, media)
                     return
                 }
             }
             
-            completion(false)
+            completion(false, nil)
         }
     }
     
@@ -55,6 +55,21 @@ class ApiService {
     
     static func saveFile(mediaId:Int64, imageData:Data, completion: @escaping (Bool) -> Void) {
         let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.SAVE_FILE + "\(mediaId)")!
+        
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 10
+        
+        //manager.request(url, method: HTTPMethod.post, parameters: [], encoding: ParameterEncoding., headers: <#T##HTTPHeaders?#>)
+        
+//        manager.request(url
+//            , method: .Post
+//            , parameters: parameters
+//            , encoding: ParameterEncoding..default
+//            , headers: userHeader).validate().responseJSON { (response) in
+//
+//                completion(response)
+//        }
+        
         Alamofire.upload(imageData, to: url.absoluteString).responseJSON { (response) in
             let n = response            
             completion(true)
@@ -119,32 +134,5 @@ class ApiService {
 
                 completion(response)
         }
-    }
-    
-    private static func saveMediaCore(mediaId:Int64, fileName:String, withRequest media:MediaRequestVO) {
-        let mediaCore = Media.findOrCreate(["id" : mediaId]) as! Media
-        mediaCore.date = media.dataHora
-        mediaCore.id = mediaId
-        mediaCore.lat = media.latitude ?? 0
-        mediaCore.lng = media.longitude ?? 0
-        mediaCore.file = saveFileMediaInfo(fileName: fileName, mimeType: media.mimeType ?? "")
-        mediaCore.mimeType = media.mimeType
-        mediaCore.lottery = media.idSorteio ?? 0
-        mediaCore.subject = media.idAssunto ?? 0
-        mediaCore.sync = false
-        mediaCore.save()
-    }
-    
-    private static func saveFileMediaInfo(fileName:String, mimeType:String) -> FileMediaInfo? {
-        if let fileMediaInfo = FileMediaInfo.findOrCreate(["name" : fileName]) as? FileMediaInfo {
-            fileMediaInfo.creationDate = Date()
-            fileMediaInfo.name = fileName
-            fileMediaInfo.mimeType = mimeType
-            fileMediaInfo.save()
-            
-            return fileMediaInfo
-        }
-        
-        return nil
-    }
+    }        
 }
