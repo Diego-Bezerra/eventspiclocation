@@ -16,12 +16,11 @@
 "KEPP_LOGGED" = "Manter conectado";
 "PHOTO_UPP" = "FOTO";
 "VIDEO_UPP" = "VÍDEO";
-"CHOOSE_EDITION" = "Escolha a Edição";
-"CHOOSE_EVENT" = "Escolha o Evento";
+"CHOOSE_EDITION" = "Escolha a edição";
+"CHOOSE_EVENT" = "Escolha o assunto";
 "MAP" = "Mapa";
 "MEDIA" = "Mídia";
 "SETTINGS" = "Configurações";
-"CHOOSE_EDITION" = "Escolha a edição";
 "OK" = "Ok";
 "CANCEL" = "Cancelar";
 "CLOSE" = "Fechar";
@@ -38,9 +37,9 @@
 "LOGOUT_UPPER" = "LOGOUT";
 "NO_IMAGE" = "Nenhuma imagem.";
 "GALLERY" = "Galeria";
-"ADD_NEW_IMAGE" = "Adicionar nova imagem";
+"ADD_NEW_IMAGE" = "Adicionar nova foto ou vídeo";
 "ADD_FROM_GALLERY" = "Adicionar da galeria";
-"TAKE_PICTURE" = "Adicionar foto";
+"TAKE_PICTURE" = "Adicionar foto ou vídeo";
 "CHOSSE_VALUES" = "Escolha a edição e o assunto antes de adicionar uma foto";
 "LOCATION_ERROR" = "Não foi possível obter sua localização.";
 "SAVE_MEDIA_PROBLEM" = "Houve um problema ao tentar salvar a mídia.";

@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import AVKit
+import AVFoundation
 
 class MapViewController: EPLBaseViewController, GMSMapViewDelegate{
 
@@ -54,7 +56,7 @@ class MapViewController: EPLBaseViewController, GMSMapViewDelegate{
         self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView?.isMyLocationEnabled = true
         mapView?.delegate = self
-        view = mapView
+        self.view = mapView
     }
     
     func updateLocation() {
@@ -114,8 +116,19 @@ class MapViewController: EPLBaseViewController, GMSMapViewDelegate{
             return false
         }
         
-        let photoViewController = PhotoViewController(fileName: fileName)
-        self.navigationController?.pushViewController(photoViewController, animated: true)
+        if media.mimeType == FileMediaInfo.getMimeTypeStr(fileMimeType: FileMediaInfo.FileMimeType.Imagem) {
+            let viewController = PhotoViewController(fileName: fileName)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            var url = EPLHelper.getFileURL(fileName: fileName)
+            url.appendPathExtension("MOV")
+            
+            let playerViewController = AVPlayerViewController()
+            let playerView = AVPlayer(url: url)
+            playerViewController.player = playerView
+            self.present(playerViewController,animated: true)
+            playerViewController.player?.play()
+        }
         
         return true
     }

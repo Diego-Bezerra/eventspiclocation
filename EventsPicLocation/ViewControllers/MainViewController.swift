@@ -20,10 +20,13 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SyncCenter.syncFilePhotos()
+        SyncCenter.syncFiles()
         setupTabBar()
-        //call view to force viewDidLoad to be called
-        _ = self.settingsViewController.view
+    }
+    
+    override func loadView() {
+        super.loadView()
+        setupTabBar()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,13 +43,14 @@ class MainViewController: UITabBarController {
     }
     
     func setupTabBar() {
-        
+        self.tabBar.isTranslucent = false
         self.mapViewController = setupTabViewController(viewController: MapViewController(), title: "MAP", image: "map")
         self.mediaViewController = setupTabViewController(viewController: MediaViewController(), title: "MEDIA", image: "photo")
         self.settingsViewController = setupTabViewController(viewController: SettingsViewController(), title: "SETTINGS", image: "settings")
         
         self.viewControllers = [mediaViewController, mapViewController, settingsViewController]
         self.selectedIndex = 0
+        _ = self.mapViewController.view
     }
     
     func setupTabViewController(viewController: UIViewController, title:String, image:String) -> UINavigationController {

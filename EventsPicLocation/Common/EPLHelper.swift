@@ -91,19 +91,22 @@ class EPLHelper {
         return uniqueString
     }
     
-    static func thumbnailForVideoAtURL(url: URL) -> UIImage? {
+    static func thumbnailForVideoAtURL(fileName: String) -> UIImage? {
         
+        var url = EPLHelper.getFileURL(fileName: fileName)
+        url.appendPathExtension("MOV")
         let asset = AVURLAsset(url: url, options: nil)
         let imgGenerator = AVAssetImageGenerator(asset: asset)
         do {
-            let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(0, 1), actualTime: nil)
+            let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(1, 60), actualTime: nil)
             return UIImage(cgImage: cgImage)
         } catch {
             print(error.localizedDescription)
         }
-        
+
         return nil
     }
+    
     
     static func getFileURLStr(fileName:String) -> String {
         return getFileURL(fileName:fileName).absoluteString

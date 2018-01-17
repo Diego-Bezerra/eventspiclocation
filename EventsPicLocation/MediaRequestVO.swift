@@ -32,7 +32,15 @@ class MediaRequestVO : Mappable {
         longitude <- map["longitude"]
         idSorteio <- map["idSorteio"]
         idAssunto <- map["idAssunto"]
-        dataHora <- (map["dataHora"], DateTransform())
         mimeType <- map["mimeType"]
+        
+        if let d = dataHora {
+            //2017-10-04 20:18:23
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            var dateStr = df.string(from: d)
+            
+            dateStr <- map["dataHora"]
+        }
     }
 }

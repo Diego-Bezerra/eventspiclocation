@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class GalleryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -115,9 +117,24 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     
      //MARK: UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let fileName = mediaList[indexPath.row].name {
+        
+        let mediaItem = mediaList[indexPath.row]
+        guard let fileName = mediaItem.name else {
+            return
+        }
+        
+        if mediaItem.mimeType == FileMediaInfo.getMimeTypeStr(fileMimeType: FileMediaInfo.FileMimeType.Imagem) {
             let viewController = PhotoViewController(fileName: fileName)
             self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            var url = EPLHelper.getFileURL(fileName: fileName)
+            url.appendPathExtension("MOV")
+            
+            let playerViewController = AVPlayerViewController()
+            let playerView = AVPlayer(url: url)
+            playerViewController.player = playerView
+            self.present(playerViewController,animated: true)
+            playerViewController.player?.play()
         }
     }
 }

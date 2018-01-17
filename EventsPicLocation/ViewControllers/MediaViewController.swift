@@ -131,6 +131,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         self.imagePicker = UIImagePickerController()
 //        self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
 //        self.imagePicker.showsCameraControls = true
+//        self.imagePicker.videoQuality = UIImagePickerControllerQualityType.typeLow
 //        self.imagePicker.delegate = self
 //        if let mediaTypes = UIImagePickerController.availableMediaTypes(for: self.imagePicker.sourceType) {
 //            self.imagePicker.mediaTypes = mediaTypes
@@ -195,7 +196,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     func saveImageFile(image:UIImage, fileName:String) {
         
         if let img = resizeImage(image:image) {
-            let newPath = EPLHelper.getFileURL(fileName: fileName)
+            var newPath = EPLHelper.getFileURL(fileName: fileName)            
             do {
                 try img.write(to: newPath)
             } catch {
@@ -207,7 +208,8 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     func saveVideoFile(videoURL: NSURL, fileName:String) {
         
         let videoData = NSData(contentsOf: videoURL as URL)
-        let newPath = EPLHelper.getFileURL(fileName: fileName)
+        var newPath = EPLHelper.getFileURL(fileName: fileName)
+        newPath.appendPathExtension("MOV")
         do {
             try videoData!.write(to: newPath)
         } catch {
@@ -259,7 +261,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         
     }
     
-    func createNewMedia(fileName:String, fileMimeType:FileMediaInfo.FileMimeType, completion: @escaping (Bool) -> Void)  {
+    func createNewMedia(fileName:String, fileMimeType:FileMediaInfo.FileMimeType, completion: @escaping (Bool, Media?) -> Void)  {
         
         EPLHelper.showProgress(withView: self.view)
         
@@ -267,13 +269,13 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
         guard let lat = location?.coordinate.latitude, let lng = location?.coordinate.longitude else {
             EPLHelper.showHud(withView: self.view, andLocalizedMessage: "LOCATION_ERROR")
             EPLHelper.hideProgress(withView: self.view)
-            completion(false)
+            completion(false, nil)
             return;
         }
         guard let sub = selectedSubject, let lot = selectedLottery else {
             EPLHelper.showHud(withView: self.view, andLocalizedMessage: "CHOSSE_VALUES")
             EPLHelper.hideProgress(withView: self.view)
-            completion(false)
+            completion(false, nil)
             return
         }
 
@@ -290,20 +292,16 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
                 
                 if !isSuccess {
                     EPLHelper.showHud(withView: self.view, andLocalizedMessage: "SAVE_MEDIA_PROBLEM")
-                    completion(false)
+                    completion(false, nil)
                 } else {
-                    completion(true)
-                    if let m = media {
-                        SyncCenter.syncFilePhoto(media: m)
-                    }
-                    self.galleryViewController.reload()
+                    completion(true, media)
                 }
                 EPLHelper.hideProgress(withView: self.view)
             })
         } else {
             EPLHelper.showHud(withView: self.view, andLocalizedMessage: "SAVE_MEDIA_PROBLEM")
             EPLHelper.hideProgress(withView: self.view)
-            completion(false)
+            completion(false, nil)
         }
     }        
     
@@ -311,17 +309,23 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             let fileName = EPLHelper.uniqueFilename(prefix: photoPrefix)
-            createNewMedia(fileName: fileName, fileMimeType: FileMediaInfo.FileMimeType.Imagem, completion: { [unowned self] (isSuccess) in
+            createNewMedia(fileName: fileName, fileMimeType: FileMediaInfo.FileMimeType.Imagem, completion: { [unowned self] (isSuccess, media) in
                 if isSuccess {
                     self.saveImageFile(image: image, fileName: fileName)
+                    if let m = media {
+                        SyncCenter.syncFile(media: m)
+                    }
                     self.galleryViewController.reload()
                 }
             })
         } else if let videoURL = info[UIImagePickerControllerMediaURL] as? NSURL {
             let fileName = EPLHelper.uniqueFilename(prefix: videoPrefix)
-            createNewMedia(fileName: fileName, fileMimeType: FileMediaInfo.FileMimeType.Video, completion: { [unowned self] (isSuccess) in
+            createNewMedia(fileName: fileName, fileMimeType: FileMediaInfo.FileMimeType.Video, completion: { [unowned self] (isSuccess, media) in
                 if isSuccess {
                     self.saveVideoFile(videoURL: videoURL, fileName: fileName)
+                    if let m = media {
+                        SyncCenter.syncFile(media: m)
+                    }
                     self.galleryViewController.reload()
                 }
             })

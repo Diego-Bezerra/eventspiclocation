@@ -10,7 +10,39 @@ import Foundation
 
 class SyncCenter {
     
-    static func syncFilePhoto(media:Media) {
+    static func syncFile(media:Media) {
+        if media.mimeType == FileMediaInfo.getMimeTypeStr(fileMimeType: FileMediaInfo.FileMimeType.Imagem) {
+            syncFilePhoto(media: media)
+        } else {
+            syncFileVideo(media: media)
+        }
+    }
+    
+    static func syncFileVideo(media:Media) {
+        
+        if !EPLHelper.canUploadFiles() {
+            return
+        }
+        
+        let file = media.file!
+        var url = EPLHelper.getFileURL(fileName: file.name!)
+        url.appendPathExtension("MOV")
+        
+        do {
+            let data = try Data(contentsOf: url)
+            ApiService.saveFile(media: media, fileData: data, completion: { (isSuccess) in
+                if isSuccess {
+                    media.sync = true
+                    media.save()
+                    print("finalizado mídiaId: \(media.id)")
+                }
+            })
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func syncFilePhoto(media:Media) {                
         
         if !EPLHelper.canUploadFiles() {
             return
@@ -23,10 +55,12 @@ class SyncCenter {
             let image = try UIImage(data: Data(contentsOf: url))
             if let img = image {
                 if let imgData = UIImageJPEGRepresentation(img, 0.2) {
-                    ApiService.saveFile(mediaId: media.id, imageData: imgData, completion: { (isSuccess) in
+                    
+                    ApiService.saveFile(media: media, fileData: imgData, completion: { (isSuccess) in
                         if isSuccess {
                             media.sync = true
                             media.save()
+                            print("finalizado mídiaId: \(media.id)")
                         }
                     })
                 }
@@ -36,46 +70,16 @@ class SyncCenter {
         }
     }
     
-    static func syncFilePhotos() {
+    static func syncFiles() {
         
         if !EPLHelper.canUploadFiles() {
             return
         }
         
-        let filesToSync = Media.query(["sync" : false]) as! [Media]
-        syncFilePhotos(index: 0, filesToSync: filesToSync)
-    }
-    
-    private static func syncFilePhotos(index:Int, filesToSync:[Media]) {
-        
-        var i = index
-        if i < filesToSync.count {
-            
-            let media = filesToSync[i]
-            let file = media.file!
-            let url = EPLHelper.getFileURL(fileName: file.name!)
-            
-            do {
-                let image = try UIImage(data: Data(contentsOf: url))
-                if let img = image {
-                    if let imgData = UIImageJPEGRepresentation(img, 0.2) {
-                    
-                        ApiService.saveFile(mediaId: media.id, imageData: imgData, completion: { (isSuccess) in
-                            if isSuccess {
-                                media.sync = true
-                                media.save()
-                            }
-                            
-                            i += 1
-                            if i < filesToSync.count {
-                                SyncCenter.syncFilePhotos(index: i, filesToSync: filesToSync)
-                            }
-                        })
-                    }
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
+        let mediaList = Media.query(["sync" : false]) as! [Media]
+        print(mediaList.count)
+        for media:Media in mediaList {
+            syncFile(media: media)
         }
         
     }

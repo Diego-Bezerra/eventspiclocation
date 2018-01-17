@@ -18,6 +18,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        activityIndicator.isHidden = true
     }
     
     func setImage(file:FileMediaInfo) {
@@ -25,7 +26,8 @@ class MediaCollectionViewCell: UICollectionViewCell {
             if file.mimeType == FileMediaInfo.getMimeTypeStr(fileMimeType: FileMediaInfo.FileMimeType.Imagem) {
                 setImage(imageView: self.mediaImage, fileName: path)
             } else if file.mimeType == FileMediaInfo.getMimeTypeStr(fileMimeType: FileMediaInfo.FileMimeType.Video) {
-                let img = EPLHelper.thumbnailForVideoAtURL(url: EPLHelper.getFileURL(fileName: path))
+                let img = EPLHelper.thumbnailForVideoAtURL(fileName: path)
+                //let img = UIImage(named: "play_video")
                 setImage(imageView: mediaImage, image: img)
             }
         }
@@ -46,15 +48,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        //imageView.sd_setImage
         imageView.image = load(fileName: fName)
-//        imageView.sd_setImage(with: url
-//            , placeholderImage: imagePlaceHolder
-//        , options: SDWebImageOptions.cacheMemoryOnly) { (image, error, cacheType, url) in
-//            if error != nil {
-//                imageView.image = UIImage(named: "warning")
-//            }
-//        }
     }
     
     var documentsUrl: URL {

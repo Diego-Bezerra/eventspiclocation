@@ -53,27 +53,25 @@ class ApiService {
 //        }
     }
     
-    static func saveFile(mediaId:Int64, imageData:Data, completion: @escaping (Bool) -> Void) {
-        let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.SAVE_FILE + "\(mediaId)")!
+    static func saveFile(media:Media, fileData:Data, completion: @escaping (Bool) -> Void) {
         
-        let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest = 10
-        
-        //manager.request(url, method: HTTPMethod.post, parameters: [], encoding: ParameterEncoding., headers: <#T##HTTPHeaders?#>)
-        
-//        manager.request(url
-//            , method: .Post
-//            , parameters: parameters
-//            , encoding: ParameterEncoding..default
-//            , headers: userHeader).validate().responseJSON { (response) in
-//
-//                completion(response)
-//        }
-        
-        Alamofire.upload(imageData, to: url.absoluteString).responseJSON { (response) in
-            let n = response            
-            completion(true)
+        var mediaType = "image/jpg"
+        if media.mimeType == FileMediaInfo.getMimeTypeStr(fileMimeType: FileMediaInfo.FileMimeType.Video) {
+            mediaType = "video/mov"
         }
+        
+        let url = ServiceApiUtil.getUrl(urlStr: ServiceApiUtil.SAVE_FILE + "\(media.id)")!
+        let header = ["Authorization": EPLUserPreferencesHelper.getUserAuth()!
+            , "Content-Type" : mediaType]
+        
+        Alamofire.upload(fileData, to: url, method: HTTPMethod.post, headers: header).validate().responseJSON { (response) in
+            if response.response?.statusCode == 200 {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+        
     }
     
     static func doLogin(login: String, password: String, completion: @escaping (Bool) -> Void) {
