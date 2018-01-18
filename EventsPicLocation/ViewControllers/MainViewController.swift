@@ -51,6 +51,7 @@ class MainViewController: UITabBarController {
         self.viewControllers = [mediaViewController, mapViewController, settingsViewController]
         self.selectedIndex = 0
         _ = self.mapViewController.view
+        _ = self.mapViewController.viewControllers[0].view
     }
     
     func setupTabViewController(viewController: UIViewController, title:String, image:String) -> UINavigationController {

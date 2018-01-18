@@ -487,6 +487,7 @@
 				A88F3E471F1BF13100AE6ACC /* Resources */,
 				F7BDAAB693C5E0DFDC1CD870 /* [CP] Embed Pods Frameworks */,
 				937C259BBD52D04CC83C671F /* [CP] Copy Pods Resources */,
+				E241B673200FF7010009513B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -592,6 +593,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventsPicLocation/Pods-EventsPicLocation-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E241B673200FF7010009513B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 		F7BDAAB693C5E0DFDC1CD870 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
