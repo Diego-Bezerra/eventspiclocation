@@ -129,13 +129,13 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     
     func setupImagePicker() {
         self.imagePicker = UIImagePickerController()
-//        self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-//        self.imagePicker.showsCameraControls = true
-//        self.imagePicker.videoQuality = UIImagePickerControllerQualityType.typeLow
-//        self.imagePicker.delegate = self
-//        if let mediaTypes = UIImagePickerController.availableMediaTypes(for: self.imagePicker.sourceType) {
-//            self.imagePicker.mediaTypes = mediaTypes
-//        }
+        self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        self.imagePicker.showsCameraControls = true
+        self.imagePicker.videoQuality = UIImagePickerControllerQualityType.typeLow
+        self.imagePicker.delegate = self
+        if let mediaTypes = UIImagePickerController.availableMediaTypes(for: self.imagePicker.sourceType) {
+            self.imagePicker.mediaTypes = mediaTypes
+        }
     }
     
     func setupDownPicker(textField:UITextField, placeHolder:String, list:Array<String>, target:Selector) -> DownPicker! {
