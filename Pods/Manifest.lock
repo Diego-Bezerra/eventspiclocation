@@ -1,48 +1,62 @@
 PODS:
-  - Alamofire (4.5.1)
-  - GoogleMaps (2.4.0):
-    - GoogleMaps/Maps (= 2.4.0)
-  - GoogleMaps/Base (2.4.0)
-  - GoogleMaps/Maps (2.4.0):
+  - Alamofire (4.7.3)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
-  - IQKeyboardManager (4.0.10)
-  - ISHPullUp (1.0.5)
-  - KYDrawerController (2.0.1)
-  - MBProgressHUD (1.0.0)
-  - ObjectMapper (3.0.0)
-  - ReachabilitySwift (3)
-  - SDWebImage (4.1.0):
-    - SDWebImage/Core (= 4.1.0)
-  - SDWebImage/Core (4.1.0)
+  - IQKeyboardManager (6.1.1)
+  - ISHPullUp (1.0.7)
+  - KYDrawerController (2.0.4)
+  - MBProgressHUD (1.1.0)
+  - ObjectMapper (3.3.0)
+  - ReachabilitySwift (4.3.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SwiftRecord (0.0.6)
-  - SwiftyJSON (3.1.4)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
-  - Alamofire (= 4.5.1)
-  - GoogleMaps (= 2.4.0)
-  - IQKeyboardManager (= 4.0.10)
-  - ISHPullUp (= 1.0.5)
+  - Alamofire
+  - GoogleMaps
+  - IQKeyboardManager
+  - ISHPullUp
   - KYDrawerController
-  - MBProgressHUD (= 1.0.0)
-  - ObjectMapper (= 3.0.0)
-  - ReachabilitySwift (= 3)
-  - SDWebImage (= 4.1.0)
-  - SwiftRecord (= 0.0.6)
-  - SwiftyJSON (= 3.1.4)
+  - MBProgressHUD
+  - ObjectMapper
+  - ReachabilitySwift
+  - SDWebImage
+  - SwiftRecord
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - GoogleMaps
+    - IQKeyboardManager
+    - ISHPullUp
+    - KYDrawerController
+    - MBProgressHUD
+    - ObjectMapper
+    - ReachabilitySwift
+    - SDWebImage
+    - SwiftRecord
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
-  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
-  ISHPullUp: 2a7208631422b91c7d5ce4556c86d182921823df
-  KYDrawerController: b716cfa5730dc2133a67efcfc28b3b5a2cff6101
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  ISHPullUp: eaa91bef06270264e1f923bc764705173d341495
+  KYDrawerController: cf5839877c442132123e9d482f458821026defdf
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftRecord: 0e323b089f2c84639f7e12aa2c827d85fa871af0
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 09d459de3febe63b2567e4f8f1fefcc25dc0ab61
+PODFILE CHECKSUM: 9175cfd7a4de0da0ddcbb1194aa7c871092f1136
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.2

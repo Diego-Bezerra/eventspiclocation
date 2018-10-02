@@ -6,16 +6,16 @@ target 'EventsPicLocation' do
   use_frameworks!
 
   # Pods for EventsPicLocation
-  pod 'IQKeyboardManager', '4.0.10'
-  pod 'MBProgressHUD', '1.0.0'
+  pod 'IQKeyboardManager'
+  pod 'MBProgressHUD'
   pod 'KYDrawerController'  
-  pod 'SwiftRecord', '0.0.6'
-  pod 'GoogleMaps', '2.4.0'
-  pod 'Alamofire', '4.5.1'
-  pod 'SwiftyJSON', '3.1.4'
-  pod 'ObjectMapper', '3.0.0'
-  pod 'ISHPullUp', '1.0.5'
-  pod 'SDWebImage', '4.1.0'
-  pod 'ReachabilitySwift', '3'
+  pod 'SwiftRecord'
+  pod 'GoogleMaps'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+  pod 'ISHPullUp'
+  pod 'SDWebImage'  
+  pod 'ReachabilitySwift'
   
 end

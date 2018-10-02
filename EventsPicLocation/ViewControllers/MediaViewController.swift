@@ -196,7 +196,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
     func saveImageFile(image:UIImage, fileName:String) {
         
         if let img = resizeImage(image:image) {
-            var newPath = EPLHelper.getFileURL(fileName: fileName)            
+            let newPath = EPLHelper.getFileURL(fileName: fileName)
             do {
                 try img.write(to: newPath)
             } catch {
@@ -314,6 +314,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
                     self.saveImageFile(image: image, fileName: fileName)
                     if let m = media {
                         SyncCenter.syncFile(media: m)
+                        self.postContextChangedNotification()
                     }
                     self.galleryViewController.reload()
                 }
@@ -325,6 +326,7 @@ class MediaViewController: EPLBaseViewController, UIImagePickerControllerDelegat
                     self.saveVideoFile(videoURL: videoURL, fileName: fileName)
                     if let m = media {
                         SyncCenter.syncFile(media: m)
+                        self.postContextChangedNotification()
                     }
                     self.galleryViewController.reload()
                 }

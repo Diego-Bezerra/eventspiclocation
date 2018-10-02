@@ -10,7 +10,7 @@ import Foundation
 import MBProgressHUD
 import SDWebImage
 import AVFoundation
-import ReachabilitySwift
+import Reachability
 
 class EPLHelper {
     
@@ -118,7 +118,7 @@ class EPLHelper {
     }
     
     static func canUploadFiles() -> Bool {
-        if Reachability.init()?.currentReachabilityStatus == Reachability.NetworkStatus.reachableViaWiFi {
+        if Reachability.init()?.connection == Reachability.Connection.wifi {
             return true
         } else {
             return !EPLUserPreferencesHelper.isOnlyWifi()

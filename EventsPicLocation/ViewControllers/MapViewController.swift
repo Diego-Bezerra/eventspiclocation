@@ -71,7 +71,7 @@ class MapViewController: EPLBaseViewController, GMSMapViewDelegate{
         
         let lat = location.coordinate.latitude
         let lng = location.coordinate.longitude
-        let zoom:Float = 18.0
+        let zoom:Float = 18.0            
         
         let camera = GMSCameraPosition.camera(withLatitude: lat
             , longitude: lng
